@@ -17,9 +17,9 @@
             <nav class="primary-nav">
                 <ul class="primary-nav-list">
                     <li><a href="index.html" class="primary-nav-link">Home</a></li>
-                    <li><a href="Products.html" class="primary-nav-link active">Products</a></li>
+                    <li><a href="products.html" class="primary-nav-link active">Products</a></li>
                     <li class="collection-menu">
-                        <a href="collection.html" class="primary-nav-link">Collection</a>
+                        <a href="collection.html" class="primary-nav-link">Collections</a>
                         <ul class="collection-dropdown">
                             <li><a href="collection.html#curated-edit" class="dropdown-nav-link">Curated Edit</a></li>
                             <li><a href="collection.html#featured-sets" class="dropdown-nav-link">Featured Sets</a></li>
@@ -36,95 +36,191 @@
                     <i class="fa-solid fa-magnifying-glass"></i>
                     <input type="search" placeholder="Search products...">
                 </div>
+                <div class="cart-icon">
+                    <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                </div>
             </div>
         </div>
     </header>
 
-    <section class="products-section" id="products">
+    <section class="page-hero products-hero">
+        <div class="page-hero-inner">
+            <div class="page-hero-copy">
+                <span class="eyebrow">Shop All</span>
+                <h2>Streetwear Essentials Built for Daily Rotation</h2>
+                <p>
+                    Explore the full Lord Corner selection, from statement sneakers to oversized layers
+                    and versatile pieces designed to work together across everyday looks.
+                </p>
+                <div class="hero-cta-group page-hero-actions">
+                    <a href="#catalog" class="btn btn-primary">Browse Catalog</a>
+                    <a href="collection.html" class="btn btn-secondary">View Collections</a>
+                </div>
+            </div>
+
+            <div class="page-hero-panel">
+                <span class="panel-tag">Editor Notes</span>
+                <h3>What You Will Find Here</h3>
+                <ul class="panel-list">
+                    <li><i class="fa-solid fa-check"></i> Core sneakers with clean shape and all-day comfort</li>
+                    <li><i class="fa-solid fa-check"></i> Relaxed streetwear layers for easy styling</li>
+                    <li><i class="fa-solid fa-check"></i> Curated picks that balance quality and value</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="category-strip-section">
+        <div class="category-strip">
+            <a href="#catalog" class="category-chip">Sneakers</a>
+            <a href="#catalog" class="category-chip">Hoodies</a>
+            <a href="#catalog" class="category-chip">Oversized Fits</a>
+            <a href="#catalog" class="category-chip">Street Sets</a>
+            <a href="#catalog" class="category-chip">New Picks</a>
+        </div>
+    </section>
+
+    <section class="products-section" id="catalog">
         <div class="section-header">
-            <span class="section-subtitle">Shop All</span>
-            <h2 class="section-title">Featured Products</h2>
+            <span class="section-subtitle">Main Catalog</span>
+            <h2 class="section-title">Shop the Current Selection</h2>
+            <p class="section-intro">A balanced mix of footwear, layering pieces, and daily essentials chosen for modern streetwear styling.</p>
             <div class="section-line"></div>
         </div>
+
         <div class="product-grid">
-            <div class="product-card">
-                <img src="Photos/products-sneakers.jpg" alt="Air Sneakers">
-                <div class="product-overlay">
-                    <div class="product-actions">
-                        <div class="product-action-button"><a href="#products"><i class="fa-solid fa-heart"></i></a></div>
-                        <div class="product-action-button"><a href="#products"><i class="fa-solid fa-cart-shopping"></i></a></div>
+            <article class="product-card">
+                <div class="product-image-container">
+                    <img src="Photos/products-sneakers.jpg" alt="Air Sneakers">
+                    <div class="product-badge">Best Seller</div>
+                    <div class="product-overlay">
+                        <div class="product-actions">
+                            <button title="Add to Wishlist"><i class="fa-solid fa-heart"></i></button>
+                            <button title="Quick Add"><i class="fa-solid fa-cart-plus"></i></button>
+                        </div>
                     </div>
                 </div>
                 <div class="product-info">
                     <h3>Air Sneakers</h3>
+                    <p class="product-meta">Clean finish | Everyday wear</p>
                     <p class="product-price">$89.00</p>
                 </div>
-            </div>
-            <div class="product-card">
-                <img src="Photos/hoodie.avif" alt="Urban Hoodie">
-                <div class="product-overlay">
-                    <div class="product-actions">
-                        <div class="product-action-button"><a href="#products"><i class="fa-solid fa-heart"></i></a></div>
-                        <div class="product-action-button"><a href="#products"><i class="fa-solid fa-cart-shopping"></i></a></div>
+            </article>
+
+            <article class="product-card">
+                <div class="product-image-container">
+                    <img src="Photos/hoodie.avif" alt="Urban Hoodie">
+                    <div class="product-badge">New Drop</div>
+                    <div class="product-overlay">
+                        <div class="product-actions">
+                            <button title="Add to Wishlist"><i class="fa-solid fa-heart"></i></button>
+                            <button title="Quick Add"><i class="fa-solid fa-cart-plus"></i></button>
+                        </div>
                     </div>
                 </div>
                 <div class="product-info">
                     <h3>Urban Hoodie</h3>
+                    <p class="product-meta">Layering staple | Soft structure</p>
                     <p class="product-price">$74.00</p>
                 </div>
-            </div>
-            <div class="product-card">
-                <img src="Photos/products-sneakers2.jpg" alt="Urban Sneakers">
-                <div class="product-overlay">
-                    <div class="product-actions">
-                        <div class="product-action-button"><a href="#products"><i class="fa-solid fa-heart"></i></a></div>
-                        <div class="product-action-button"><a href="#products"><i class="fa-solid fa-cart-shopping"></i></a></div>
+            </article>
+
+            <article class="product-card">
+                <div class="product-image-container">
+                    <img src="Photos/products-sneakers2.jpg" alt="Urban Runner">
+                    <div class="product-badge">Top Rated</div>
+                    <div class="product-overlay">
+                        <div class="product-actions">
+                            <button title="Add to Wishlist"><i class="fa-solid fa-heart"></i></button>
+                            <button title="Quick Add"><i class="fa-solid fa-cart-plus"></i></button>
+                        </div>
                     </div>
                 </div>
                 <div class="product-info">
-                    <h3>Urban Sneakers</h3>
+                    <h3>Urban Runner</h3>
+                    <p class="product-meta">Sport-inspired | Premium cushioning</p>
                     <p class="product-price">$92.00</p>
                 </div>
-            </div>
-            <div class="product-card">
-                <img src="Photos/style.avif" alt="Urban Collection">
-                <div class="product-overlay">
-                    <div class="product-actions">
-                        <div class="product-action-button"><a href="#products"><i class="fa-solid fa-heart"></i></a></div>
-                        <div class="product-action-button"><a href="#products"><i class="fa-solid fa-cart-shopping"></i></a></div>
+            </article>
+
+            <article class="product-card">
+                <div class="product-image-container">
+                    <img src="Photos/style.avif" alt="Urban Set">
+                    <div class="product-badge">Editor Pick</div>
+                    <div class="product-overlay">
+                        <div class="product-actions">
+                            <button title="Add to Wishlist"><i class="fa-solid fa-heart"></i></button>
+                            <button title="Quick Add"><i class="fa-solid fa-cart-plus"></i></button>
+                        </div>
                     </div>
                 </div>
                 <div class="product-info">
-                    <h3>Urban Collection</h3>
+                    <h3>Urban Set</h3>
+                    <p class="product-meta">Matched look | Street-ready finish</p>
                     <p class="product-price">$96.00</p>
                 </div>
-            </div>
-            <div class="product-card">
-                <img src="Photos/Oversized Fit.avif" alt="Oversized Fit">
-                <div class="product-overlay">
-                    <div class="product-actions">
-                        <div class="product-action-button"><a href="#products"><i class="fa-solid fa-heart"></i></a></div>
-                        <div class="product-action-button"><a href="#products"><i class="fa-solid fa-cart-shopping"></i></a></div>
+            </article>
+
+            <article class="product-card">
+                <div class="product-image-container">
+                    <img src="Photos/Oversized Fit.avif" alt="Oversized Fit">
+                    <div class="product-badge">Core Fit</div>
+                    <div class="product-overlay">
+                        <div class="product-actions">
+                            <button title="Add to Wishlist"><i class="fa-solid fa-heart"></i></button>
+                            <button title="Quick Add"><i class="fa-solid fa-cart-plus"></i></button>
+                        </div>
                     </div>
                 </div>
                 <div class="product-info">
                     <h3>Oversized Fit</h3>
+                    <p class="product-meta">Relaxed cut | Everyday comfort</p>
                     <p class="product-price">$68.00</p>
                 </div>
-            </div>
-            <div class="product-card">
-                <img src="Photos/products-sneakers3.jpg" alt="Running Shoes">
-                <div class="product-overlay">
-                    <div class="product-actions">
-                        <div class="product-action-button"><a href="#products"><i class="fa-solid fa-heart"></i></a></div>
-                        <div class="product-action-button"><a href="#products"><i class="fa-solid fa-cart-shopping"></i></a></div>
+            </article>
+
+            <article class="product-card">
+                <div class="product-image-container">
+                    <img src="Photos/products-sneakers3.jpg" alt="Run Street Shoes">
+                    <div class="product-badge">Fresh Pick</div>
+                    <div class="product-overlay">
+                        <div class="product-actions">
+                            <button title="Add to Wishlist"><i class="fa-solid fa-heart"></i></button>
+                            <button title="Quick Add"><i class="fa-solid fa-cart-plus"></i></button>
+                        </div>
                     </div>
                 </div>
                 <div class="product-info">
-                    <h3>Running Shoes</h3>
+                    <h3>Run Street Shoes</h3>
+                    <p class="product-meta">Lightweight feel | Clean profile</p>
                     <p class="product-price">$84.00</p>
                 </div>
-            </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="feature-split-section">
+        <div class="feature-split-grid">
+            <article class="feature-panel">
+                <span class="section-subtitle">Best Picks</span>
+                <h2 class="section-title">The Pieces Customers Keep Coming Back For</h2>
+                <p class="section-intro">Reliable favorites that combine wearable comfort, premium finish, and easy styling across different fits.</p>
+                <ul class="panel-list">
+                    <li><i class="fa-solid fa-check"></i> Sneakers built to anchor casual and elevated looks</li>
+                    <li><i class="fa-solid fa-check"></i> Oversized layers that stay clean instead of sloppy</li>
+                    <li><i class="fa-solid fa-check"></i> Versatile picks that repeat well throughout the week</li>
+                </ul>
+            </article>
+
+            <article class="feature-panel accent-panel">
+                <span class="panel-tag">Next Step</span>
+                <h3>Want a More Styled Direction?</h3>
+                <p>After browsing the catalog, move into the collections page to see how these pieces come together as complete looks.</p>
+                <div class="hero-cta-group page-hero-actions">
+                    <a href="collection.html" class="btn btn-primary">Go to Collections</a>
+                    <a href="about.html" class="btn btn-secondary">Why Choose Us</a>
+                </div>
+            </article>
         </div>
     </section>
 
@@ -132,13 +228,14 @@
         <div class="footer-container">
             <div class="footer-brand">
                 <img src="Photos/logo_Nero_AI_Background_Remover_transparent.png" alt="Lord Corner Logo">
-                <p>Premium pieces selected for comfort, confidence, and street-ready everyday wear.</p>
+                <p>Premium products selected for comfort, confidence, and modern streetwear styling.</p>
             </div>
 
             <div class="footer-links">
                 <h4>Quick Links</h4>
                 <ul>
                     <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
                     <li><a href="collection.html">Collections</a></li>
                     <li><a href="about.html">Why Choose Us</a></li>
                     <li><a href="contact.html">Contact</a></li>

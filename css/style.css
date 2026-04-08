@@ -333,7 +333,9 @@ ul {
 .about-section,
 .collection-showcase,
 .contact-section,
-.reviews-section {
+.reviews-section,
+.home-collections-section,
+.home-cta-section {
     background: var(--soft-bg);
     color: var(--ink);
 }
@@ -343,16 +345,22 @@ ul {
 .collection-showcase .section-title,
 .contact-section .section-title,
 .reviews-section .section-title,
+.home-collections-section .section-title,
+.home-cta-section .section-title,
 .features-section h3,
 .about-section h3,
 .collection-showcase h3,
 .contact-section h3,
 .reviews-section h3,
+.home-collections-section h3,
+.home-cta-section h3,
 .features-section h2,
 .about-section h2,
 .collection-showcase h2,
 .contact-section h2,
-.reviews-section h2 {
+.reviews-section h2,
+.home-collections-section h2,
+.home-cta-section h2 {
     color: var(--ink);
 }
 
@@ -360,6 +368,11 @@ ul {
     max-width: 760px;
     margin: 0 auto 44px;
     text-align: center;
+}
+
+.section-header-dark .section-title,
+.section-header-dark .section-intro {
+    color: var(--white);
 }
 
 .section-subtitle {
@@ -377,6 +390,13 @@ ul {
     line-height: 1.15;
     text-transform: uppercase;
     letter-spacing: 2px;
+}
+
+.section-intro {
+    max-width: 620px;
+    margin: 14px auto 0;
+    color: var(--soft-text);
+    font-size: 1rem;
 }
 
 .section-line {
@@ -426,7 +446,9 @@ ul {
 .contact-section .contact-details-card,
 .reviews-section .review-card,
 .reviews-section .reviews-highlight,
-.reviews-section .reviews-summary-card {
+.reviews-section .reviews-summary-card,
+.home-collections-section .home-collection-card,
+.home-cta-card {
     background: var(--soft-panel);
     border: 1px solid rgba(197, 160, 89, 0.2);
     box-shadow: 0 16px 35px rgba(30, 23, 14, 0.08);
@@ -595,6 +617,74 @@ ul {
     max-width: 1200px;
     margin: 30px auto 0;
     text-align: center;
+}
+
+.home-collections-section,
+.home-cta-section {
+    padding: 88px 5%;
+}
+
+.home-collections-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+}
+
+.home-collection-card {
+    overflow: hidden;
+    border-radius: 22px;
+}
+
+.home-collection-card img {
+    width: 100%;
+    height: 290px;
+    object-fit: cover;
+}
+
+.home-collection-copy {
+    padding: 24px;
+}
+
+.home-collection-tag {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 12px;
+    padding: 7px 12px;
+    border-radius: 999px;
+    background: rgba(197, 160, 89, 0.12);
+    color: var(--primary-gold);
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.home-collection-copy h3 {
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.home-collection-copy p,
+.home-cta-text {
+    color: var(--soft-text);
+}
+
+.home-cta-card {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 46px 38px;
+    text-align: center;
+    border-radius: 28px;
+}
+
+.home-cta-card .section-title {
+    margin-bottom: 14px;
+}
+
+.home-cta-card .hero-cta-group {
+    margin-top: 28px;
 }
 
 .btn-text {
@@ -1541,7 +1631,8 @@ ul {
     .contact-methods,
     .contact-grid,
     .team-members-grid,
-    .reviews-grid {
+    .reviews-grid,
+    .home-collections-grid {
         grid-template-columns: 1fr;
     }
 
@@ -1563,5 +1654,247 @@ ul {
     .footer-links,
     .footer-social {
         text-align: center;
+    }
+}
+
+/* --- 14. Inner Page Hero & Shared Split Layout --- */
+.page-hero {
+    padding: 96px 5% 72px;
+    background: var(--soft-bg);
+    color: var(--ink);
+}
+
+.page-hero-inner,
+.feature-split-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
+    gap: 30px;
+    align-items: stretch;
+}
+
+.page-hero-copy {
+    align-self: center;
+}
+
+.page-hero-copy h2 {
+    font-size: clamp(2.3rem, 4.6vw, 4.15rem);
+    line-height: 1.05;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    margin-bottom: 18px;
+    color: var(--ink);
+}
+
+.page-hero-copy p {
+    max-width: 640px;
+    color: var(--soft-text);
+}
+
+.page-hero-actions {
+    justify-content: flex-start;
+    margin-top: 28px;
+}
+
+.page-hero-panel,
+.feature-panel {
+    background: var(--soft-panel);
+    border: 1px solid rgba(197, 160, 89, 0.2);
+    border-radius: 24px;
+    box-shadow: 0 16px 35px rgba(30, 23, 14, 0.08);
+}
+
+.page-hero-panel {
+    padding: 30px;
+    align-self: center;
+}
+
+.panel-tag {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 14px;
+    padding: 7px 12px;
+    border-radius: 999px;
+    background: rgba(197, 160, 89, 0.12);
+    color: var(--primary-gold);
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.panel-list {
+    display: grid;
+    gap: 14px;
+}
+
+.panel-list li {
+    color: var(--soft-text);
+}
+
+.panel-list i {
+    color: var(--primary-gold);
+    margin-right: 10px;
+}
+
+.section-header-left {
+    text-align: left;
+    margin: 0 0 28px;
+}
+
+.section-header-left .section-intro {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.section-header-left .section-line {
+    margin-left: 0;
+}
+
+.page-hero .btn-secondary,
+.feature-split-section .btn-secondary {
+    color: var(--ink);
+    border-color: rgba(31, 26, 20, 0.18);
+}
+
+.page-hero .btn-secondary:hover,
+.feature-split-section .btn-secondary:hover {
+    color: var(--primary-gold);
+    border-color: var(--primary-gold);
+}
+
+.category-strip-section,
+.feature-split-section {
+    padding: 0 5% 88px;
+    background: var(--soft-bg);
+    color: var(--ink);
+}
+
+.category-strip {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    padding: 4px 0 0;
+}
+
+.category-chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 120px;
+    padding: 12px 18px;
+    border-radius: 999px;
+    background: var(--soft-panel);
+    border: 1px solid rgba(197, 160, 89, 0.2);
+    color: var(--ink);
+    font-weight: 600;
+    transition: color var(--transition), border-color var(--transition), transform var(--transition);
+}
+
+.category-chip:hover {
+    color: var(--primary-gold);
+    border-color: var(--primary-gold);
+    transform: translateY(-2px);
+}
+
+.product-meta {
+    margin-bottom: 8px;
+    color: var(--gray);
+    font-size: 0.95rem;
+}
+
+.feature-panel {
+    padding: 34px 32px;
+}
+
+.feature-panel .section-title,
+.feature-panel h3 {
+    color: var(--ink);
+}
+
+.feature-panel .section-title {
+    text-align: left;
+    margin-bottom: 12px;
+}
+
+.feature-panel .section-intro {
+    margin: 0 0 22px;
+    max-width: none;
+}
+
+.accent-panel {
+    background: #111111;
+    border-color: rgba(197, 160, 89, 0.2);
+}
+
+.accent-panel h3,
+.accent-panel p {
+    color: var(--white);
+}
+
+.accent-panel .btn-secondary {
+    color: var(--white);
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.accent-panel .btn-secondary:hover {
+    color: var(--primary-gold);
+    border-color: var(--primary-gold);
+}
+
+/* --- 15. Extended Responsive Rules --- */
+@media (max-width: 1100px) {
+    .page-hero-inner,
+    .feature-split-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-hero,
+    .category-strip-section,
+    .feature-split-section,
+    .collection-hero,
+    .contact-hero,
+    .reviews-hero,
+    .collection-showcase,
+    .contact-section,
+    .reviews-section {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .page-hero {
+        padding-top: 56px;
+        padding-bottom: 56px;
+    }
+
+    .page-hero-copy h2,
+    .collection-hero-copy h2,
+    .contact-hero-copy h2,
+    .reviews-hero-copy h2 {
+        font-size: clamp(1.8rem, 9vw, 2.7rem);
+    }
+
+    .page-hero-actions {
+        justify-content: center;
+    }
+
+    .feature-panel,
+    .page-hero-panel {
+        padding: 26px 22px;
+    }
+
+    .category-strip {
+        justify-content: stretch;
+    }
+
+    .category-chip {
+        width: 100%;
     }
 }

@@ -1451,16 +1451,46 @@ ul {
     .header-container,
     .site-header:not(header) {
         min-height: auto;
-        gap: 18px;
+        gap: 14px;
     }
 
-    .header-actions,
+    .site-logo {
+        height: 40px;
+    }
+
+    .header-actions {
+        width: 100%;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 12px;
+    }
+
     .header-search {
+        width: 100%;
+        min-width: 0;
+        padding: 9px 14px;
+    }
+
+    .primary-nav-list {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px 20px;
+    }
+
+    .primary-nav-list li,
+    .primary-nav-list .collection-menu {
         width: 100%;
     }
 
-    .header-search {
-        min-width: 0;
+    .nav-link,
+    .primary-nav-link {
+        width: 100%;
+        justify-content: center;
+        padding: 8px 0;
+        font-size: 0.88rem;
+        letter-spacing: 1px;
     }
 
     .hero-banner,
@@ -1476,12 +1506,22 @@ ul {
 
     .hero-banner {
         min-height: auto;
-        padding-top: 90px;
-        padding-bottom: 72px;
+        padding-top: 56px;
+        padding-bottom: 56px;
     }
 
     .hero-text {
         font-size: 1rem;
+    }
+
+    .hero-brand {
+        font-size: clamp(1.5rem, 8vw, 2.2rem);
+        letter-spacing: 3px;
+        margin-bottom: 16px;
+    }
+
+    .hero-title {
+        font-size: clamp(1.4rem, 7vw, 2rem);
     }
 
     .feature-grid,

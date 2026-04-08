@@ -232,13 +232,28 @@ ul {
     max-width: 760px;
 }
 
+.hero-brand {
+    display: block;
+    width: fit-content;
+    margin: 0 auto 22px;
+    padding: 0 0 10px;
+    color: var(--white);
+    font-size: clamp(2rem, 4.8vw, 3.6rem);
+    font-weight: 800;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    border-bottom: 2px solid rgba(197, 160, 89, 0.9);
+    text-align: center;
+    text-shadow: 0 8px 22px rgba(0, 0, 0, 0.28);
+}
+
 .hero-title {
     color: var(--primary-gold);
-    font-size: clamp(2.7rem, 6vw, 4.9rem);
-    line-height: 1.05;
+    font-size: clamp(1.9rem, 4.2vw, 3.2rem);
+    line-height: 1.1;
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin-bottom: 22px;
+    margin-bottom: 18px;
 }
 
 .hero-text {
@@ -865,15 +880,33 @@ ul {
 }
 
 .dropdown-nav-link {
+    position: relative;
     display: block;
     padding: 10px 16px;
     color: var(--gray);
     transition: color var(--transition), background-color var(--transition);
 }
 
+.dropdown-nav-link::after {
+    content: "";
+    position: absolute;
+    left: 16px;
+    bottom: 8px;
+    width: calc(100% - 32px);
+    height: 1px;
+    background: var(--primary-gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--transition);
+}
+
 .dropdown-nav-link:hover {
     color: var(--primary-gold);
     background: rgba(255, 255, 255, 0.03);
+}
+
+.dropdown-nav-link:hover::after {
+    transform: scaleX(1);
 }
 
 /* --- 10. Collection Page --- */

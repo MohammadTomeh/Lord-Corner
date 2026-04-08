@@ -234,17 +234,19 @@ ul {
 
 .hero-brand {
     display: block;
-    width: fit-content;
+    width: max-content;
+    max-width: 100%;
     margin: 0 auto 22px;
     padding: 0 0 10px;
     color: var(--white);
-    font-size: clamp(2rem, 4.8vw, 3.6rem);
+    font-size: clamp(1.8rem, 4.2vw, 3.2rem);
     font-weight: 800;
-    letter-spacing: 8px;
+    letter-spacing: 4px;
     text-transform: uppercase;
     border-bottom: 2px solid rgba(197, 160, 89, 0.9);
     text-align: center;
     text-shadow: 0 8px 22px rgba(0, 0, 0, 0.28);
+    white-space: nowrap;
 }
 
 .hero-title {
@@ -938,7 +940,9 @@ ul {
 }
 
 .collection-hero-copy h1,
-.contact-hero-copy h1 {
+.collection-hero-copy h2,
+.contact-hero-copy h1,
+.contact-hero-copy h2 {
     font-size: clamp(2.3rem, 4.5vw, 4.3rem);
     line-height: 1.05;
     text-transform: uppercase;
@@ -1280,7 +1284,8 @@ ul {
     align-items: center;
 }
 
-.reviews-hero-copy h1 {
+.reviews-hero-copy h1,
+.reviews-hero-copy h2 {
     font-size: clamp(2.3rem, 4.5vw, 4.1rem);
     line-height: 1.05;
     margin-bottom: 18px;

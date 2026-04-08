@@ -1043,7 +1043,7 @@ ul {
     display: flex;
     align-items: flex-end;
     padding: 28px;
-    background: rgba(0, 0, 0, 0.62);
+    background: rgba(0, 0, 0, 0.72);
 }
 
 .curated-card-copy h3,
@@ -1053,6 +1053,10 @@ ul {
     margin-bottom: 8px;
 }
 
+.curated-card-copy h3 {
+    color: var(--white);
+}
+
 .curated-card-copy p,
 .season-card p,
 .contact-method p,
@@ -1060,6 +1064,10 @@ ul {
 .contact-details-card p,
 .team-member-role {
     color: var(--gray);
+}
+
+.curated-card-copy p {
+    color: #f0ebe1;
 }
 
 .season-card h3,

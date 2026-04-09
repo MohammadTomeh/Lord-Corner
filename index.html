@@ -9,11 +9,13 @@
 </head>
 <body>
 
+    <!-- Header -->
     <header class="site-header">
         <div class="header-container">
             <a href="index.html" class="logo-link">
                 <img class="site-logo" src="Photos/logo_Nero_AI_Background_Remover_transparent.png" alt="Lord Corner Logo">
             </a>
+            <input type="checkbox" id="nav-toggle-index" class="nav-toggle">
             
             <nav class="primary-nav">
                 <ul class="primary-nav-list"> 
@@ -30,23 +32,46 @@
                     <li><a href="about.html" class="nav-link">Why Choose Us</a></li>
                     <li><a href="reviews.html" class="nav-link">Reviews</a></li>
                     <li><a href="contact.html" class="nav-link">Contact</a></li>
-                </ul>
-            </nav>
+                </ul> <!-- /primary-nav-list -->
+            </nav> <!-- /primary-nav -->
 
             <div class="header-actions">
                 <div class="header-search">
                     <i class="fa-solid fa-magnifying-glass"></i>
                     <input type="search" placeholder="Search trends...">
-                </div>
+                </div> <!-- /header-search -->
                 <div class="cart-icon">
                     <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-            </div>
-        </div>
-    </header>
+                </div> <!-- /cart-icon -->
+            </div> <!-- /header-actions -->
 
+            <label for="nav-toggle-index" class="nav-toggle-button" aria-label="Toggle navigation">
+                <span></span>
+            </label> <!-- /nav-toggle-button -->
+
+            <div class="mobile-nav">
+                <div class="mobile-nav-list">
+                    <a href="index.html" class="mobile-nav-link active">Home</a>
+                    <a href="products.html" class="mobile-nav-link">Products</a>
+                    <div class="mobile-nav-group">
+                        <a href="collection.html" class="mobile-nav-link">Collections</a>
+                        <div class="mobile-submenu">
+                            <a href="collection.html#curated-edit">Curated Edit</a>
+                            <a href="collection.html#featured-sets">Featured Sets</a>
+                            <a href="collection.html#seasonal-picks">Seasonal Picks</a>
+                        </div>
+                    </div>
+                    <a href="about.html" class="mobile-nav-link">Why Choose Us</a>
+                    <a href="reviews.html" class="mobile-nav-link">Reviews</a>
+                    <a href="contact.html" class="mobile-nav-link">Contact</a>
+                </div> <!-- /mobile-nav-list -->
+            </div> <!-- /mobile-nav -->
+        </div> <!-- /header-container -->
+    </header> <!-- /header -->
+
+    <!-- Hero -->
     <main class="hero-banner" id="home">
-        <div class="hero-backdrop"></div>
+        <div class="hero-backdrop"></div> <!-- /hero-backdrop -->
         <div class="hero-content">
             <h1 class="hero-brand">Lord Corner</h1>
             <h2 class="hero-title">Premium Streetwear for Everyday Confidence</h2>
@@ -57,10 +82,11 @@
             <div class="hero-cta-group">
                 <a href="products.html" class="btn btn-primary">Shop Now</a>
                 <a href="#collections-preview" class="btn btn-secondary">View Collections</a>
-            </div>
-        </div>
-    </main>
+            </div> <!-- /hero-cta-group -->
+        </div> <!-- /hero-content -->
+    </main> <!-- /hero -->
 
+    <!-- Featured Products -->
     <section class="products-section" id="featured">
         <div class="section-header">
             <span class="section-subtitle">Featured Products</span>
@@ -77,14 +103,14 @@
                         <div class="product-actions">
                             <button title="Add to Wishlist"><i class="fa-solid fa-heart"></i></button>
                             <button title="Quick Add"><i class="fa-solid fa-cart-plus"></i></button>
-                        </div>
-                    </div>
-                </div>
+                        </div> <!-- /product-actions -->
+                    </div> <!-- /product-overlay -->
+                </div> <!-- /product-image-container -->
                 <div class="product-info">
                     <h3>Air Sneakers</h3>
                     <p class="product-price">$89.00</p>
-                </div>
-            </div>
+                </div> <!-- /product-info -->
+            </div> <!-- /product-card -->
             <div class="product-card">
                 <div class="product-image-container">
                     <img src="Photos/hoodie.avif" alt="Urban Hoodie">
@@ -93,14 +119,14 @@
                         <div class="product-actions">
                             <button title="Add to Wishlist"><i class="fa-solid fa-heart"></i></button>
                             <button title="Quick Add"><i class="fa-solid fa-cart-plus"></i></button>
-                        </div>
-                    </div>
-                </div>
+                        </div> <!-- /product-actions -->
+                    </div> <!-- /product-overlay -->
+                </div> <!-- /product-image-container -->
                 <div class="product-info">
                     <h3>Urban Hoodie</h3>
                     <p class="product-price">$74.00</p>
-                </div>
-            </div>
+                </div> <!-- /product-info -->
+            </div> <!-- /product-card -->
             <div class="product-card">
                 <div class="product-image-container">
                     <img src="Photos/Oversized Fit.avif" alt="Oversized Fit">
@@ -109,14 +135,14 @@
                         <div class="product-actions">
                             <button title="Add to Wishlist"><i class="fa-solid fa-heart"></i></button>
                             <button title="Quick Add"><i class="fa-solid fa-cart-plus"></i></button>
-                        </div>
-                    </div>
-                </div>
+                        </div> <!-- /product-actions -->
+                    </div> <!-- /product-overlay -->
+                </div> <!-- /product-image-container -->
                 <div class="product-info">
                     <h3>Oversized Fit</h3>
                     <p class="product-price">$68.00</p>
-                </div>
-            </div>
+                </div> <!-- /product-info -->
+            </div> <!-- /product-card -->
             <div class="product-card">
                 <div class="product-image-container">
                     <img src="Photos/products-sneakers2.jpg" alt="Urban Runner">
@@ -125,20 +151,21 @@
                         <div class="product-actions">
                             <button title="Add to Wishlist"><i class="fa-solid fa-heart"></i></button>
                             <button title="Quick Add"><i class="fa-solid fa-cart-plus"></i></button>
-                        </div>
-                    </div>
-                </div>
+                        </div> <!-- /product-actions -->
+                    </div> <!-- /product-overlay -->
+                </div> <!-- /product-image-container -->
                 <div class="product-info">
                     <h3>Urban Runner</h3>
                     <p class="product-price">$92.00</p>
-                </div>
-            </div>
-        </div>
+                </div> <!-- /product-info -->
+            </div> <!-- /product-card -->
+        </div> <!-- /product-grid -->
         <div class="section-footer">
             <a href="products.html" class="btn-text">View All Products <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-    </section>
+        </div> <!-- /section-footer -->
+    </section> <!-- /featured-products -->
 
+    <!-- Why Lord Corner -->
     <section class="features-section">
         <div class="section-header">
             <span class="section-subtitle">Why Lord Corner</span>
@@ -162,9 +189,10 @@
                 <h3>Fast Delivery</h3>
                 <p>Reliable shipping and responsive support keep the full shopping experience smooth and trusted.</p>
             </div>
-        </div>
-    </section>
+        </div> <!-- /feature-grid -->
+    </section> <!-- /why-lord-corner -->
 
+    <!-- Collections Preview -->
     <section class="home-collections-section" id="collections-preview">
         <div class="section-header">
             <span class="section-subtitle">Curated Collections</span>
@@ -179,30 +207,31 @@
                     <span class="home-collection-tag">Collection</span>
                     <h3>Oversized Essentials</h3>
                     <p>Relaxed silhouettes and everyday pieces with a premium streetwear feel.</p>
-                </div>
-            </article>
+                </div> <!-- /home-collection-copy -->
+            </article> <!-- /home-collection-card -->
             <article class="home-collection-card">
                 <img src="Photos/products-sneakers2.jpg" alt="Sneaker Edit">
                 <div class="home-collection-copy">
                     <span class="home-collection-tag">Collection</span>
                     <h3>Sneaker Edit</h3>
                     <p>Clean footwear pairings selected to sharpen every outfit from the ground up.</p>
-                </div>
-            </article>
+                </div> <!-- /home-collection-copy -->
+            </article> <!-- /home-collection-card -->
             <article class="home-collection-card">
                 <img src="Photos/style.avif" alt="Seasonal Picks">
                 <div class="home-collection-copy">
                     <span class="home-collection-tag">Collection</span>
                     <h3>Seasonal Picks</h3>
                     <p>Current looks and versatile layers curated for today's style and weather.</p>
-                </div>
-            </article>
-        </div>
+                </div> <!-- /home-collection-copy -->
+            </article> <!-- /home-collection-card -->
+        </div> <!-- /home-collections-grid -->
         <div class="section-footer">
             <a href="collection.html" class="btn-text">Explore Collections <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-    </section>
+        </div> <!-- /section-footer -->
+    </section> <!-- /collections-preview -->
 
+    <!-- Stats -->
     <section class="stats-section">
         <div class="section-header section-header-dark">
             <span class="section-subtitle">Trusted By Our Community</span>
@@ -215,19 +244,20 @@
                 <div class="stat-card">
                     <div class="stat-number">324K+</div>
                     <p class="stat-text">Happy Customers</p>
-                </div>
+                </div> <!-- /stat-card -->
                 <div class="stat-card">
                     <div class="stat-number">150K+</div>
                     <p class="stat-text">Orders Shipped</p>
-                </div>
+                </div> <!-- /stat-card -->
                 <div class="stat-card">
                     <div class="stat-number">4.9/5</div>
                     <p class="stat-text">Global Rating</p>
-                </div>
-            </div>
-        </div>
-    </section>
+                </div> <!-- /stat-card -->
+            </div> <!-- /stats-grid -->
+        </div> <!-- /stats-backdrop -->
+    </section> <!-- /stats -->
 
+    <!-- Reviews Preview -->
     <section class="reviews-section home-reviews-section">
         <div class="section-header">
             <span class="section-subtitle">What Customers Say</span>
@@ -242,36 +272,37 @@
                     <div>
                         <strong>Ahmad K.</strong>
                         <span>Bought the Urban Hoodie</span>
-                    </div>
+                    </div> <!-- /review-author-meta -->
                     <div class="review-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                </div>
-            </article>
+                </div> <!-- /review-author -->
+            </article> <!-- /review-card -->
             <article class="review-card">
                 <p>"The collection actually helped me style a full outfit instead of just buying random pieces. That made a big difference."</p>
                 <div class="review-author">
                     <div>
                         <strong>Raneem S.</strong>
                         <span>Shopped the collection page</span>
-                    </div>
+                    </div> <!-- /review-author-meta -->
                     <div class="review-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                </div>
-            </article>
+                </div> <!-- /review-author -->
+            </article> <!-- /review-card -->
             <article class="review-card">
                 <p>"Fast delivery, clean packaging, and great value for the quality. It feels like a store I can trust."</p>
                 <div class="review-author">
                     <div>
                         <strong>Omar T.</strong>
                         <span>First-time customer</span>
-                    </div>
+                    </div> <!-- /review-author-meta -->
                     <div class="review-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                </div>
-            </article>
-        </div>
+                </div> <!-- /review-author -->
+            </article> <!-- /review-card -->
+        </div> <!-- /reviews-grid -->
         <div class="section-footer">
             <a href="reviews.html" class="btn-text">Read More Reviews <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-    </section>
+        </div> <!-- /section-footer -->
+    </section> <!-- /reviews-preview -->
 
+    <!-- Final CTA -->
     <section class="home-cta-section">
         <div class="home-cta-card">
             <span class="section-subtitle">Ready To Shop</span>
@@ -281,9 +312,10 @@
                 <a href="products.html" class="btn btn-primary">Shop Products</a>
                 <a href="collection.html" class="btn btn-secondary">Browse Collections</a>
             </div>
-        </div>
-    </section>
+        </div> <!-- /home-cta-card -->
+    </section> <!-- /final-cta -->
 
+    <!-- Footer -->
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-brand">
@@ -308,14 +340,13 @@
                     <a href="https://www.instagram.com/m7md.tomeh/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
                     <a href="https://github.com/MohammadTomeh" target="_blank"><i class="fa-brands fa-github"></i></a>
                     <a href="https://wa.me/972599396976" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-                </div>
-            </div>
-        </div>
+                </div> <!-- /social-icons -->
+            </div> <!-- /footer-social -->
+        </div> <!-- /footer-container -->
         <div class="footer-bottom">
             <p>&copy; 2026 Lord Corner | Mohammad Tomeh. All Rights Reserved.</p>
-        </div>
-    </footer>
+        </div> <!-- /footer-bottom -->
+    </footer> <!-- /footer -->
 
 </body>
 </html>
-

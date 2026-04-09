@@ -1,4 +1,3 @@
-/* --- 1. Core Identity & Reset --- */
 :root {
     --primary-gold: #c5a059;
     --dark-bg: #0a0a0a;
@@ -13,7 +12,8 @@
     --muted: #d7d7d7;
     --border: rgba(197, 160, 89, 0.16);
     --shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
-    --transition: 0.3s ease;
+    --transition: 0.3s;
+    --header-offset: 86px;
 }
 
 * {
@@ -30,7 +30,6 @@ body {
 }
 
 a {
-    color: inherit;
     text-decoration: none;
 }
 
@@ -43,85 +42,87 @@ ul {
     list-style: none;
 }
 
-/* --- 2. Shared Navigation --- */
+/* ==================== Header / Navigation ==================== */
 .site-header {
-    background: rgba(10, 10, 10, 0.96);
-    border-bottom: 2px solid var(--primary-gold);
-    position: sticky;
+    background: rgba(10, 10, 10, 0.9);
+    border-bottom: 3px solid var(--primary-gold);
+    position: fixed;
     top: 0;
+    width: 100%;
     z-index: 1000;
-    backdrop-filter: blur(14px);
 }
 
+/* i use this to keep the spacing consistent on both the header and the inner content */
 .header-container,
 .site-header {
-    padding-left: 5%;
-    padding-right: 5%;
+    padding:0 5%;
 }
 
+/* this is the main desktop header row where i place the logo, nav, and actions */
 .header-container {
-    min-height: 86px;
+    min-height: 100px;
+    display: flex;
+}
+
+/* this keeps the logo aligned cleanly inside the header row */
+.logo-link{
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 24px;
 }
 
-.site-header:not(header) {
-    min-height: 86px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-}
-
-.logo-link,
-.site-header > a {
-    display: inline-flex;
-    align-items: center;
-    flex-shrink: 0;
-}
-
+/* this sets the visual size of the logo image */
 .site-logo {
-    width: auto;
-    height: 48px;
+    height: 70px;
 }
 
+/* both the nav wrapper and nav list use flex so alignment is controlled consistently */
 .primary-nav,
 .primary-nav-list {
     display: flex;
     align-items: center;
 }
 
+/* this lets the desktop navigation take the flexible middle area between the logo and header actions */
 .primary-nav {
     flex: 1 1 auto;
     justify-content: center;
     min-width: 0;
 }
 
-.primary-nav-list {
-    gap: 24px;
-    flex-wrap: wrap;
+/* hidden checkbox used to control the mobile menu with css only */
+.nav-toggle {
+    position: absolute;
+    opacity: 0;
 }
 
-.nav-link,
-.primary-nav-link {
+/* mobile only controls stay hidden by default and appear later inside the mobile media query */
+.nav-toggle-button,
+.mobile-nav {
+    display: none;
+}
+
+/* spacing between desktop nav links */
+.primary-nav-list {
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+/* shared desktop nav link styling, including spacing, uppercase look, and hover-ready positioning */
+.nav-link{
     position: relative;
-    display: inline-flex;
-    align-items: center;
+    /* display: flex;
+    align-items: center; */
     padding: 10px 0;
     color: var(--white);
-    font-size: 0.92rem;
-    font-weight: 600;
+    font-size: 1rem;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1.2px;
+    letter-spacing: 1.5;
     transition: color var(--transition);
 }
 
-.nav-link::after,
-.primary-nav-link::after {
+/* this creates the underline hover effect for nav links */
+.nav-link::after{
     content: "";
     position: absolute;
     left: 0;
@@ -130,197 +131,201 @@ ul {
     height: 2px;
     background: var(--primary-gold);
     transform: scaleX(0);
-    transform-origin: center;
     transition: transform var(--transition);
 }
 
+/* this changes nav link color on hover and active state */
 .nav-link:hover,
-.nav-link.active,
-.primary-nav-link:hover,
-.primary-nav-link.active {
+.nav-link.active{
     color: var(--primary-gold);
 }
 
+/* this animates the underline into view on hover and active state */
 .nav-link:hover::after,
-.nav-link.active::after,
-.primary-nav-link:hover::after,
-.primary-nav-link.active::after {
+.nav-link.active::after{
     transform: scaleX(1);
 }
 
+/* this groups the search bar and cart icon on the right side of the header */
 .header-actions {
     display: flex;
     align-items: center;
     gap: 16px;
-    flex-shrink: 0;
 }
 
+/* this styles the search bar container in the header */
 .header-search {
     display: flex;
     align-items: center;
     gap: 10px;
     background: #161616;
     border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 999px;
+    border-radius: 20px;
     padding: 10px 16px;
     min-width: 230px;
+    flex-wrap: wrap;
 }
 
+/* this colors and sizes the search icon */
 .header-search i {
     color: var(--primary-gold);
-    font-size: 0.95rem;
+    font-size: 1rem;
 }
 
+/* this removes default input styling so the search field matches the theme */
 .header-search input {
-    width: 100%;
     background: transparent;
     border: none;
     outline: none;
     color: var(--white);
-    font-size: 0.94rem;
+    font-size: 0.9rem;
 }
 
+/* this softens the placeholder text color inside the search field */
 .header-search input::placeholder {
-    color: #8b8b8b;
+    color: #a09c9c;
 }
 
+/* this styles the circular cart button in the header */
 .cart-icon a {
     width: 42px;
     height: 42px;
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
+    color: var(--white);
     border-radius: 50%;
     border: 1px solid rgba(255, 255, 255, 0.12);
     background: #151515;
     transition: transform var(--transition), border-color var(--transition), color var(--transition);
 }
 
+/* this adds the hover highlight to the cart button */
 .cart-icon a:hover {
     color: var(--primary-gold);
     border-color: var(--primary-gold);
     transform: translateY(-2px);
 }
 
-/* --- 3. Home Hero --- */
+/* ==================== Home Hero ==================== */
+/* this styles the main landing hero with full-screen feel, background image, overlay, and centered content */
 .hero-banner {
     position: relative;
-    min-height: calc(100vh - 86px);
+    min-height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 110px 5% 90px;
-    background-color: #111111;
+    justify-content: flex-start;
+    text-align: left;
     background-image: url("../Photos/Home-photo.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    overflow: hidden;
 }
 
+/* dark overlay placed over the hero image for better text readability */
 .hero-backdrop {
     position: absolute;
-    inset: 0;
+    width: 100%;
+    height: 100%;
     background: rgba(0, 0, 0, 0.52);
-    pointer-events: none;
 }
 
+/* main content box inside the hero */
 .hero-content {
     position: relative;
-    z-index: 1;
     max-width: 760px;
+    left: 4%;
 }
 
+/* large store name styling */
 .hero-brand {
     display: block;
     width: max-content;
     max-width: 100%;
-    margin: 0 auto 22px;
-    padding: 0 0 10px;
+    margin: 0 0 22px;
     color: var(--white);
-    font-size: clamp(1.8rem, 4.2vw, 3.2rem);
+    font-size: 3.2rem;
     font-weight: 800;
     letter-spacing: 4px;
     text-transform: uppercase;
-    border-bottom: 2px solid rgba(197, 160, 89, 0.9);
-    text-align: center;
-    text-shadow: 0 8px 22px rgba(0, 0, 0, 0.28);
-    white-space: nowrap;
+    border-bottom: 2px solid var(--primary-gold);
+
 }
 
+/* main hero headline styling */
 .hero-title {
     color: var(--primary-gold);
-    font-size: clamp(1.9rem, 4.2vw, 3.2rem);
+    font-size: 3.2rem;
     line-height: 1.1;
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-bottom: 18px;
 }
 
+/* supporting paragraph under the hero title */
 .hero-text {
     max-width: 620px;
-    margin: 0 auto 34px;
+    margin: 0 0 34px;
     color: var(--muted);
     font-size: 1.05rem;
 }
 
+/* this groups the main hero call-to-action buttons */
 .hero-cta-group {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 16px;
     flex-wrap: wrap;
 }
 
-.btn,
-.hero-primary-button,
-.hero-secondary-button {
-    display: inline-flex;
+/* shared button base used across multiple sections */
+.btn{
+    display: flex;
     align-items: center;
     justify-content: center;
     min-width: 190px;
     padding: 14px 28px;
     border-radius: 6px;
     border: 2px solid transparent;
-    font-size: 0.94rem;
+    font-size: 0.9rem;
     font-weight: 700;
     letter-spacing: 0.8px;
     text-transform: uppercase;
     transition: transform var(--transition), border-color var(--transition), background-color var(--transition), color var(--transition);
 }
 
-.btn:hover,
-.hero-primary-button:hover,
-.hero-secondary-button:hover {
+/* this adds a small lift effect on button hover */
+.btn:hover{
     transform: translateY(-2px);
 }
 
-.btn-primary,
-.hero-primary-button {
+/* primary gold-filled button style */
+.btn-primary {
     background: var(--primary-gold);
     color: #080808;
 }
 
-.btn-primary:hover,
-.hero-primary-button:hover {
+/* hover color for the primary button */
+.btn-primary:hover:hover {
     background: #d6b06a;
 }
 
-.btn-secondary,
-.hero-secondary-button {
+/* secondary outlined button style */
+.btn-secondary {
     border-color: rgba(255, 255, 255, 0.75);
     color: var(--white);
     background: transparent;
 }
 
-.btn-secondary:hover,
-.hero-secondary-button:hover {
+/* hover state for the secondary button */
+.btn-secondary:hover:hover {
     border-color: var(--primary-gold);
     color: var(--primary-gold);
 }
 
-/* --- 4. Shared Sections --- */
+/* ==================== Shared Sections ==================== */
+/* shared section spacing for the main content blocks */
 .features-section,
 .products-section,
 .stats-section,
@@ -329,6 +334,7 @@ ul {
     padding: 88px 5%;
 }
 
+/* light-surface sections that switch text to dark ink for readability */
 .features-section,
 .about-section,
 .collection-showcase,
@@ -340,58 +346,38 @@ ul {
     color: var(--ink);
 }
 
-.features-section .section-title,
-.about-section .section-title,
-.collection-showcase .section-title,
-.contact-section .section-title,
-.reviews-section .section-title,
-.home-collections-section .section-title,
-.home-cta-section .section-title,
-.features-section h3,
-.about-section h3,
-.collection-showcase h3,
-.contact-section h3,
-.reviews-section h3,
-.home-collections-section h3,
-.home-cta-section h3,
-.features-section h2,
-.about-section h2,
-.collection-showcase h2,
-.contact-section h2,
-.reviews-section h2,
-.home-collections-section h2,
-.home-cta-section h2 {
-    color: var(--ink);
-}
-
+/* this centers the main section heading group and limits its width */
 .section-header {
     max-width: 760px;
     margin: 0 auto 44px;
     text-align: center;
 }
 
-.section-header-dark .section-title,
+/* special heading color override for dark-background sections */
 .section-header-dark .section-intro {
     color: var(--white);
 }
 
+/* small gold label above section headings */
 .section-subtitle {
     display: inline-block;
     margin-bottom: 10px;
     color: var(--primary-gold);
-    font-size: 0.88rem;
-    font-weight: 700;
+    font-size: 0.9rem;
+    font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
+/* main section title styling */
 .section-title {
-    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-size: 2.8rem;
     line-height: 1.15;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
+/* intro paragraph under section titles */
 .section-intro {
     max-width: 620px;
     margin: 14px auto 0;
@@ -399,14 +385,16 @@ ul {
     font-size: 1rem;
 }
 
+/* decorative gold line used under section headers */
 .section-line {
     width: 72px;
     height: 3px;
     margin: 16px auto 0;
     background: var(--primary-gold);
-    border-radius: 999px;
+    border-radius: 20px;
 }
 
+/* shared grid containers used by cards across the site */
 .feature-grid,
 .product-grid,
 .offers-grid,
@@ -416,16 +404,10 @@ ul {
     margin: 0 auto;
     display: grid;
     gap: 28px;
+    grid-template-columns: repeat(3, 1fr);
 }
 
-.feature-grid,
-.product-grid,
-.offers-grid,
-.top-picks-grid,
-.news-grid {
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-}
-
+/* shared card base styling for dark-themed cards */
 .feature-card,
 .product-card,
 .offer-card,
@@ -438,6 +420,7 @@ ul {
     transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
 }
 
+/* light card variation used inside lighter page sections */
 .features-section .feature-card,
 .about-section .about-photo-frame,
 .collection-showcase .season-card,
@@ -454,27 +437,31 @@ ul {
     box-shadow: 0 16px 35px rgba(30, 23, 14, 0.08);
 }
 
+/* shared hover lift for cards */
 .feature-card:hover,
 .product-card:hover,
 .offer-card:hover,
 .top-pick-card:hover,
 .news-card:hover {
     transform: translateY(-6px);
-    border-color: rgba(197, 160, 89, 0.42);
+    border-color: var(--primary-gold);
     box-shadow: 0 24px 50px rgba(0, 0, 0, 0.42);
 }
 
-/* --- 5. Home Features --- */
+/* ==================== Home Features ==================== */
+/* single value/feature card styling */
 .feature-card {
     padding: 34px 28px;
     text-align: center;
 }
 
+/* slightly highlighted center feature card */
 .feature-card.featured {
     border-color: rgba(197, 160, 89, 0.4);
     background: #eee4d2;
 }
 
+/* shared icon styling for feature and offer cards */
 .feature-icon,
 .offer-icon {
     color: var(--primary-gold);
@@ -482,12 +469,14 @@ ul {
     margin-bottom: 20px;
 }
 
+/* card title styling */
 .feature-card h3,
 .offer-title {
     font-size: 1.25rem;
     margin-bottom: 12px;
 }
 
+/* shared body text colors inside cards and footer text blocks */
 .feature-card p,
 .offer-description,
 .stat-text,
@@ -496,6 +485,7 @@ ul {
     color: var(--gray);
 }
 
+/* softer text color for light-surface content areas */
 .features-section .feature-card p,
 .about-section .about-description,
 .about-section .about-list,
@@ -508,22 +498,26 @@ ul {
     color: var(--soft-text);
 }
 
-/* --- 6. Home Products --- */
+/* ==================== Home Products ==================== */
+/* dark product section surface on the home page */
 .products-section {
     background: #141414;
 }
 
+/* product card container setup */
 .product-card {
     overflow: hidden;
     padding: 0;
     text-align: left;
 }
 
+/* this establishes positioning context for badges and overlays */
 .product-image-container,
 .product-card {
     position: relative;
 }
 
+/* product image sizing and crop behavior */
 .product-card img,
 .news-image img {
     width: 100%;
@@ -531,6 +525,7 @@ ul {
     object-fit: cover;
 }
 
+/* hidden hover overlay that shows product actions */
 .product-overlay {
     position: absolute;
     inset: 0;
@@ -543,16 +538,19 @@ ul {
     transition: opacity var(--transition);
 }
 
+/* this reveals the product overlay on hover */
 .product-card:hover .product-overlay {
     opacity: 1;
 }
 
+/* horizontal layout for the action buttons over product images */
 .product-actions {
     display: flex;
     align-items: center;
     gap: 12px;
 }
 
+/* circular action button styling for quick actions */
 .product-actions button,
 .product-action-button {
     width: 46px;
@@ -568,20 +566,24 @@ ul {
     transition: transform var(--transition), background-color var(--transition), color var(--transition);
 }
 
+/* this keeps icon links centered inside circular action buttons */
 .product-action-button a {
     width: 100%;
     height: 100%;
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    color: inherit;
 }
 
+/* hover state for product quick action buttons */
 .product-actions button:hover,
 .product-action-button:hover {
     transform: translateY(-2px);
     background: var(--primary-gold);
 }
 
+/* small gold badge shown on featured products */
 .product-badge {
     position: absolute;
     top: 18px;
@@ -597,33 +599,39 @@ ul {
     border-radius: 999px;
 }
 
+/* text area under each product image */
 .product-info {
     padding: 22px 22px 24px;
 }
 
+/* product title sizing */
 .product-info h3,
 .product-title {
     font-size: 1.2rem;
     margin-bottom: 6px;
 }
 
+/* gold styling for product prices and highlighted product text */
 .product-price,
 .product-text {
     color: var(--primary-gold);
     font-weight: 700;
 }
 
+/* shared footer area below some sections for text links or ctas */
 .section-footer {
     max-width: 1200px;
     margin: 30px auto 0;
     text-align: center;
 }
 
+/* shared spacing for the collections preview and final cta sections */
 .home-collections-section,
 .home-cta-section {
     padding: 88px 5%;
 }
 
+/* grid layout for the home collections preview cards */
 .home-collections-grid {
     max-width: 1200px;
     margin: 0 auto;
@@ -632,21 +640,25 @@ ul {
     gap: 28px;
 }
 
+/* card wrapper for home collection previews */
 .home-collection-card {
     overflow: hidden;
     border-radius: 22px;
 }
 
+/* collection preview image sizing */
 .home-collection-card img {
     width: 100%;
     height: 290px;
     object-fit: cover;
 }
 
+/* text area under each collection preview image */
 .home-collection-copy {
     padding: 24px;
 }
 
+/* small tag label used on collection preview cards */
 .home-collection-tag {
     display: inline-flex;
     align-items: center;
@@ -661,16 +673,19 @@ ul {
     letter-spacing: 1px;
 }
 
+/* collection preview title spacing */
 .home-collection-copy h3 {
     margin-bottom: 10px;
     font-size: 1.3rem;
 }
 
+/* shared paragraph styling for collection previews and final cta text */
 .home-collection-copy p,
 .home-cta-text {
     color: var(--soft-text);
 }
 
+/* final cta card layout on the home page */
 .home-cta-card {
     max-width: 1100px;
     margin: 0 auto;
@@ -679,14 +694,17 @@ ul {
     border-radius: 28px;
 }
 
+/* this tightens spacing between cta title and text */
 .home-cta-card .section-title {
     margin-bottom: 14px;
 }
 
+/* this adds top spacing before the cta buttons */
 .home-cta-card .hero-cta-group {
     margin-top: 28px;
 }
 
+/* text-only link/button style used under sections */
 .btn-text {
     display: inline-flex;
     align-items: center;
@@ -697,11 +715,13 @@ ul {
     transition: gap var(--transition), color var(--transition);
 }
 
+/* slight arrow-spacing animation on hover */
 .btn-text:hover {
     gap: 14px;
 }
 
-/* --- 7. Stats --- */
+/* ==================== Stats ==================== */
+/* dark stats band used as a trust-building section */
 .stats-section {
     background: #0b0b0b;
     border-top: 1px solid rgba(255, 255, 255, 0.06);
@@ -710,17 +730,20 @@ ul {
     padding-bottom: 74px;
 }
 
+/* this centers the stats content within the page width */
 .stats-backdrop {
     max-width: 1200px;
     margin: 0 auto;
 }
 
+/* three-column grid for the stats cards */
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 22px;
 }
 
+/* individual stat card styling */
 .stat-card {
     min-height: 180px;
     padding: 34px 24px 30px;
@@ -736,6 +759,7 @@ ul {
     box-shadow: 0 18px 34px rgba(0, 0, 0, 0.28);
 }
 
+/* large gold number styling inside each stat card */
 .stat-number {
     color: var(--primary-gold);
     font-size: clamp(2.4rem, 4vw, 3.4rem);
@@ -744,19 +768,22 @@ ul {
     letter-spacing: 1px;
 }
 
+/* supporting stat label text */
 .stat-text {
     color: #ddd4c5;
     font-size: 1.02rem;
     letter-spacing: 0.4px;
 }
 
-/* --- 8. Footer --- */
+/* ==================== Footer ==================== */
+/* main footer surface styling */
 .site-footer {
     background: #000000;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     padding: 60px 5% 28px;
 }
 
+/* grid layout for footer content columns */
 .footer-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -766,6 +793,7 @@ ul {
     align-items: start;
 }
 
+/* shared footer logo sizing */
 .footer-brand img,
 .site-footer-logo img {
     height: 56px;
@@ -773,12 +801,14 @@ ul {
     margin-bottom: 18px;
 }
 
+/* default text alignment for footer content blocks */
 .footer-brand,
 .footer-links,
 .footer-social {
     text-align: left;
 }
 
+/* footer small heading styling */
 .footer-links h4,
 .footer-social h4 {
     font-size: 1rem;
@@ -787,20 +817,24 @@ ul {
     margin-bottom: 16px;
 }
 
+/* vertical list layout for footer links */
 .footer-links ul {
     display: grid;
     gap: 10px;
 }
 
+/* footer quick link colors and transition */
 .footer-links a {
     color: var(--gray);
     transition: color var(--transition);
 }
 
+/* footer link hover highlight */
 .footer-links a:hover {
     color: var(--primary-gold);
 }
 
+/* shared layout for circular social icons */
 .social-icons,
 .site-footer-social-links {
     display: flex;
@@ -809,6 +843,7 @@ ul {
     flex-wrap: wrap;
 }
 
+/* base social icon button style */
 .social-icons a,
 .site-footer-social-links a {
     width: 42px;
@@ -822,6 +857,7 @@ ul {
     transition: transform var(--transition), color var(--transition), border-color var(--transition);
 }
 
+/* hover state for social icon buttons */
 .social-icons a:hover,
 .site-footer-social-links a:hover {
     color: var(--primary-gold);
@@ -829,6 +865,7 @@ ul {
     transform: translateY(-2px);
 }
 
+/* bottom copyright strip in the footer */
 .footer-bottom,
 .site-footer-text {
     max-width: 1200px;
@@ -844,17 +881,20 @@ ul {
     text-align: center;
 }
 
-/* --- 9. Other Existing Pages Compatibility --- */
+/* ==================== Shared Inner Page Compatibility ==================== */
+/* shared styles reused by the inside pages like about, collection, contact, and reviews so they feel part of one system */
 .offers-grid {
     align-items: stretch;
 }
 
+/* main spacing and light background for the offers/value section */
 .offers-section {
     padding-top: 110px;
     padding-bottom: 96px;
     background: var(--soft-bg);
 }
 
+/* dark title panel at the top of the offers section */
 .offers-section .section-header {
     margin-bottom: 72px;
     padding: 36px 20px 42px;
@@ -862,20 +902,24 @@ ul {
     border-radius: 24px;
 }
 
+/* individual offer/value card spacing */
 .offer-card {
     padding: 28px 24px;
 }
 
+/* layout for icon plus text inside each offer card */
 .offer-card-content {
     display: flex;
     align-items: flex-start;
     gap: 18px;
 }
 
+/* flexible text area inside the offer card */
 .offer-copy {
     flex: 1 1 auto;
 }
 
+/* two-column layout for the about/story section */
 .about-layout {
     max-width: 1200px;
     margin: 0 auto;
@@ -885,21 +929,25 @@ ul {
     align-items: center;
 }
 
+/* main paragraph inside the about section */
 .about-description {
     color: var(--gray);
     margin-bottom: 22px;
 }
 
+/* vertical checklist used in about and value sections */
 .about-list {
     display: grid;
     gap: 14px;
 }
 
+/* gold check icon styling */
 .about-list i {
     color: var(--primary-gold);
     margin-right: 10px;
 }
 
+/* framed image styling in the about section */
 .about-photo-frame {
     overflow: hidden;
     border-radius: 20px;
@@ -907,6 +955,7 @@ ul {
     box-shadow: var(--shadow);
 }
 
+/* this makes the about image cover the frame properly */
 .about-photo-frame img {
     width: 100%;
     height: 100%;
@@ -914,6 +963,7 @@ ul {
     object-fit: cover;
 }
 
+/* small gallery dots under the about image */
 .about-gallery-dots {
     display: flex;
     justify-content: center;
@@ -921,6 +971,7 @@ ul {
     margin-top: 22px;
 }
 
+/* base dot styling */
 .about-gallery-dot {
     width: 12px;
     height: 12px;
@@ -928,21 +979,25 @@ ul {
     border: 1px solid var(--primary-gold);
 }
 
+/* hover highlight for gallery dots */
 .about-gallery-dot:hover{
     background: var(--primary-gold);
 }
 
+/* active and highlighted dot states */
 .about-gallery-dot-active,
 .about-gallery-dot-middle {
     background: var(--primary-gold);
 }
 
+/* wrapper around the desktop collection dropdown trigger */
 .collection-menu {
     position: relative;
     padding-bottom: 14px;
     margin-bottom: -14px;
 }
 
+/* invisible bridge that keeps hover active while moving into the dropdown */
 .collection-menu::after {
     content: "";
     position: absolute;
@@ -952,6 +1007,7 @@ ul {
     height: 16px;
 }
 
+/* desktop collection dropdown menu styling */
 .collection-dropdown {
     position: absolute;
     top: 100%;
@@ -967,10 +1023,12 @@ ul {
     z-index: 1001;
 }
 
+/* this shows the dropdown on hover */
 .collection-menu:hover .collection-dropdown {
     display: block;
 }
 
+/* link styling inside the dropdown menu */
 .dropdown-nav-link {
     position: relative;
     display: block;
@@ -979,6 +1037,7 @@ ul {
     transition: color var(--transition), background-color var(--transition);
 }
 
+/* underline effect inside dropdown links */
 .dropdown-nav-link::after {
     content: "";
     position: absolute;
@@ -992,16 +1051,169 @@ ul {
     transition: transform var(--transition);
 }
 
+/* dropdown link hover colors */
 .dropdown-nav-link:hover {
     color: var(--primary-gold);
     background: rgba(255, 255, 255, 0.03);
 }
 
+/* this expands the underline on dropdown hover */
 .dropdown-nav-link:hover::after {
     transform: scaleX(1);
 }
 
-/* --- 10. Collection Page --- */
+/* ==================== Mobile Hamburger Menu ==================== */
+/* mobile only header controls for the css hamburger and expandable menu */
+/* mobile hamburger button and menu styles */
+.nav-toggle-button {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    background: #141414;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: border-color var(--transition), color var(--transition), background-color var(--transition);
+}
+
+/* hover highlight for the hamburger button */
+.nav-toggle-button:hover {
+    color: var(--primary-gold);
+    border-color: var(--primary-gold);
+}
+
+/* middle line of the hamburger icon */
+.nav-toggle-button span {
+    position: relative;
+    width: 18px;
+    height: 2px;
+    background: currentColor;
+    border-radius: 999px;
+    transition: background-color var(--transition), transform var(--transition);
+}
+
+/* top and bottom hamburger lines created with pseudo-elements */
+.nav-toggle-button span::before,
+.nav-toggle-button span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 18px;
+    height: 2px;
+    background: currentColor;
+    border-radius: 999px;
+    transition: transform var(--transition), top var(--transition), opacity var(--transition);
+}
+
+/* top line position */
+.nav-toggle-button span::before {
+    top: -6px;
+}
+
+/* bottom line position */
+.nav-toggle-button span::after {
+    top: 6px;
+}
+
+/* keep hamburger as 3 lines and only change active color */
+/* this changes only the line color when the mobile menu is open */
+.nav-toggle:checked ~ .nav-toggle-button span {
+    background: var(--primary-gold);
+}
+
+/* this highlights the hamburger button when active */
+.nav-toggle:checked ~ .nav-toggle-button {
+    color: var(--primary-gold);
+    border-color: rgba(197, 160, 89, 0.65);
+}
+
+/* collapsed mobile navigation container */
+.mobile-nav {
+    width: 100%;
+    grid-column: 1 / -1;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: max-height 0.35s ease, opacity 0.28s ease, transform 0.28s ease, margin-top 0.28s ease;
+}
+
+/* inner panel that holds the mobile nav links */
+.mobile-nav-list {
+    display: grid;
+    gap: 10px;
+    padding: 16px;
+    border: 1px solid rgba(197, 160, 89, 0.18);
+    border-radius: 18px;
+    background: rgba(13, 13, 13, 0.98);
+    box-shadow: 0 18px 34px rgba(0, 0, 0, 0.28);
+}
+
+/* main mobile navigation link styling */
+.mobile-nav-link {
+    display: block;
+    padding: 10px 12px;
+    border-radius: 12px;
+    color: var(--white);
+    font-size: 0.88rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.9px;
+    text-align: center;
+    transition: color var(--transition), background-color var(--transition);
+}
+
+/* hover and active state for mobile nav links */
+.mobile-nav-link:hover,
+.mobile-nav-link.active {
+    color: var(--primary-gold);
+    background: rgba(197, 160, 89, 0.08);
+}
+
+/* group wrapper for mobile collection links */
+.mobile-nav-group {
+    display: grid;
+    gap: 8px;
+}
+
+/* stacked sub-links inside the mobile collections group */
+.mobile-submenu {
+    display: grid;
+    gap: 6px;
+    padding-top: 2px;
+}
+
+/* mobile submenu link styling */
+.mobile-submenu a {
+    display: block;
+    padding: 8px 12px;
+    border-radius: 10px;
+    color: var(--gray);
+    font-size: 0.76rem;
+    font-weight: 600;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    text-align: center;
+    transition: color var(--transition), background-color var(--transition);
+}
+
+/* mobile submenu hover styling */
+.mobile-submenu a:hover {
+    color: var(--primary-gold);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+/* this expands the mobile menu when the hidden checkbox is checked */
+.nav-toggle:checked ~ .mobile-nav {
+    max-height: 620px;
+    opacity: 1;
+    transform: translateY(0);
+    margin-top: 8px;
+}
+
+/* ==================== Collection Page ==================== */
+/* this styles shared by the collection and contact hero-style intro layouts */
 .collection-hero,
 .contact-hero {
     padding: 96px 5% 72px;
@@ -1009,6 +1221,7 @@ ul {
     color: var(--ink);
 }
 
+/* two-column hero layout for collection and contact intros */
 .collection-hero-inner,
 .contact-hero-inner {
     max-width: 1200px;
@@ -1019,6 +1232,7 @@ ul {
     align-items: center;
 }
 
+/* small gold label used above major inner-page headings */
 .eyebrow {
     display: inline-block;
     margin-bottom: 12px;
@@ -1029,6 +1243,7 @@ ul {
     font-weight: 700;
 }
 
+/* large headings for collection and contact hero sections */
 .collection-hero-copy h1,
 .collection-hero-copy h2,
 .contact-hero-copy h1,
@@ -1040,6 +1255,7 @@ ul {
     margin-bottom: 18px;
 }
 
+/* supporting intro text for collection/contact hero sections */
 .collection-hero-copy p,
 .contact-hero-copy p,
 .contact-intro,
@@ -1048,6 +1264,7 @@ ul {
     max-width: 640px;
 }
 
+/* checklist layout under collection/contact hero text */
 .collection-highlights,
 .contact-points {
     display: grid;
@@ -1055,17 +1272,20 @@ ul {
     margin-top: 24px;
 }
 
+/* checklist text styling */
 .collection-highlights li,
 .contact-points li {
     color: var(--soft-text);
 }
 
+/* gold checklist icon styling */
 .collection-highlights i,
 .contact-points i {
     color: var(--primary-gold);
     margin-right: 10px;
 }
 
+/* light card surface used for collection image and contact info card */
 .collection-hero-visual,
 .contact-hero-card {
     background: var(--soft-panel);
@@ -1075,6 +1295,7 @@ ul {
     box-shadow: 0 16px 35px rgba(30, 23, 14, 0.08);
 }
 
+/* this makes the collection hero image fill its frame cleanly */
 .collection-hero-visual img {
     width: 100%;
     height: 100%;
@@ -1082,12 +1303,14 @@ ul {
     object-fit: cover;
 }
 
+/* shared spacing for collection and contact content sections */
 .collection-showcase,
 .contact-section,
 .team-members-section {
     padding: 88px 5%;
 }
 
+/* shared grid wrappers for collection, contact, and older team layouts */
 .curated-grid,
 .season-grid,
 .contact-grid,
@@ -1098,10 +1321,12 @@ ul {
     gap: 28px;
 }
 
+/* special 12-column grid used by the collection feature cards */
 .curated-grid {
     grid-template-columns: repeat(12, minmax(0, 1fr));
 }
 
+/* large image-led collection card container */
 .curated-card {
     position: relative;
     overflow: hidden;
@@ -1112,14 +1337,17 @@ ul {
     background: #1a1815;
 }
 
+/* wide featured collection cards */
 .curated-card.large {
     grid-column: span 7;
 }
 
+/* smaller supporting collection cards */
 .curated-card.small {
     grid-column: span 5;
 }
 
+/* collection card image sizing */
 .curated-card img {
     width: 100%;
     height: 100%;
@@ -1127,6 +1355,7 @@ ul {
     object-fit: cover;
 }
 
+/* dark overlay that holds the text on top of collection images */
 .curated-card-overlay {
     position: absolute;
     inset: 0;
@@ -1136,6 +1365,7 @@ ul {
     background: rgba(0, 0, 0, 0.72);
 }
 
+/* shared title sizing for collection, season, and contact cards */
 .curated-card-copy h3,
 .season-card h3,
 .contact-method h3 {
@@ -1143,10 +1373,12 @@ ul {
     margin-bottom: 8px;
 }
 
+/* this forces collection image-card titles to stay white over the dark overlay */
 .curated-card-copy h3 {
     color: var(--white);
 }
 
+/* shared paragraph styling for card bodies */
 .curated-card-copy p,
 .season-card p,
 .contact-method p,
@@ -1156,10 +1388,12 @@ ul {
     color: var(--gray);
 }
 
+/* slightly brighter text for collection overlay paragraphs */
 .curated-card-copy p {
     color: #f0ebe1;
 }
 
+/* dark heading color for light cards */
 .season-card h3,
 .contact-method h3,
 .contact-form-card h3,
@@ -1167,6 +1401,7 @@ ul {
     color: var(--ink);
 }
 
+/* small category tag on collection image cards */
 .curated-card-tag {
     display: inline-flex;
     margin-bottom: 14px;
@@ -1180,12 +1415,14 @@ ul {
     letter-spacing: 1px;
 }
 
+/* responsive auto-fit grid used by season/contact cards */
 .season-grid,
 .contact-grid,
 .team-members-grid {
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 
+/* light card base used across season and contact content */
 .season-card,
 .contact-method,
 .contact-form-card,
@@ -1197,6 +1434,7 @@ ul {
     box-shadow: var(--shadow);
 }
 
+/* inner spacing for season and contact cards */
 .season-card,
 .contact-method,
 .contact-form-card,
@@ -1204,12 +1442,14 @@ ul {
     padding: 28px;
 }
 
+/* bullet list styling inside season cards */
 .season-card ul {
     display: grid;
     gap: 10px;
     margin-top: 16px;
 }
 
+/* list item text inside season cards */
 .season-card li {
     color: var(--muted);
 }
@@ -1266,17 +1506,20 @@ ul {
     margin-bottom: 6px;
 }
 
-/* --- 11. Contact Page --- */
+/* ==================== Contact Page ==================== */
+/* main two-column contact area for form and details */
 .contact-grid {
     align-items: start;
     grid-template-columns: minmax(0, 0.95fr) minmax(320px, 1.05fr);
 }
 
+/* shared padding for contact info cards */
 .contact-hero-card,
 .contact-details-card {
     padding: 28px;
 }
 
+/* shared heading sizing inside contact cards */
 .contact-hero-card h3,
 .contact-details-card h3,
 .contact-form-card h3 {
@@ -1284,6 +1527,7 @@ ul {
     margin-bottom: 12px;
 }
 
+/* top row of quick contact method cards */
 .contact-methods {
     max-width: 1200px;
     margin: 0 auto 28px;
@@ -1292,30 +1536,42 @@ ul {
     gap: 24px;
 }
 
+/* gold icon styling for contact method cards */
 .contact-method i {
     color: var(--primary-gold);
     font-size: 1.6rem;
     margin-bottom: 16px;
 }
 
+/* this makes contact links darker and bolder for readability */
 .contact-method a,
 .contact-detail-link {
     color: var(--ink);
     font-weight: 600;
 }
 
+/* utility links that should keep their inherited text color */
+.social-icons a,
+.btn-text,
+.about-gallery-dots a {
+    color: inherit;
+}
+
+/* main contact form layout */
 .contact-form {
     display: grid;
     gap: 16px;
     margin-top: 20px;
 }
 
+/* two-column row layout inside the contact form */
 .contact-form-row {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px;
 }
 
+/* label layout for form fields */
 .contact-form label {
     display: grid;
     gap: 8px;
@@ -1323,6 +1579,7 @@ ul {
     font-size: 0.95rem;
 }
 
+/* shared input and textarea styling */
 .contact-form input,
 .contact-form textarea {
     width: 100%;
@@ -1335,29 +1592,34 @@ ul {
     transition: border-color var(--transition), box-shadow var(--transition);
 }
 
+/* extra sizing rule only for the message box */
 .contact-form textarea {
     min-height: 160px;
     resize: vertical;
 }
 
+/* focus highlight for form fields */
 .contact-form input:focus,
 .contact-form textarea:focus {
     border-color: rgba(197, 160, 89, 0.55);
     box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.12);
 }
 
+/* vertical stack for store details and contact details */
 .detail-list {
     display: grid;
     gap: 14px;
     margin: 20px 0;
 }
 
+/* strong label inside contact detail items */
 .detail-list strong {
     display: block;
     margin-bottom: 4px;
     color: var(--ink);
 }
 
+/* highlight note box at the bottom of the contact details card */
 .contact-note {
     margin-top: 18px;
     padding: 16px 18px;
@@ -1366,13 +1628,15 @@ ul {
     color: var(--muted);
 }
 
-/* --- 12. Reviews Page --- */
+/* ==================== Reviews Page ==================== */
+/* intro hero for the reviews page */
 .reviews-hero {
     padding: 96px 5% 72px;
     background: var(--soft-bg);
     color: var(--ink);
 }
 
+/* two-column layout for review intro text and summary card */
 .reviews-hero-inner {
     max-width: 1200px;
     margin: 0 auto;
@@ -1382,6 +1646,7 @@ ul {
     align-items: center;
 }
 
+/* large review-page hero heading */
 .reviews-hero-copy h1,
 .reviews-hero-copy h2 {
     font-size: clamp(2.3rem, 4.5vw, 4.1rem);
@@ -1391,11 +1656,13 @@ ul {
     letter-spacing: 1.8px;
 }
 
+/* intro paragraph color in the reviews hero */
 .reviews-hero-copy p,
 .reviews-summary-card p {
     color: var(--soft-text);
 }
 
+/* small trust badges shown under the reviews intro */
 .reviews-metrics {
     display: flex;
     gap: 16px;
@@ -1403,6 +1670,7 @@ ul {
     margin-top: 24px;
 }
 
+/* individual trust badge styling */
 .reviews-metrics span {
     display: inline-flex;
     align-items: center;
@@ -1413,11 +1681,13 @@ ul {
     font-weight: 600;
 }
 
+/* summary score card on the reviews hero */
 .reviews-summary-card {
     padding: 30px;
     border-radius: 22px;
 }
 
+/* layout for the big numeric review score */
 .reviews-summary-score {
     display: flex;
     align-items: baseline;
@@ -1425,22 +1695,26 @@ ul {
     margin-bottom: 10px;
 }
 
+/* large gold score number */
 .reviews-summary-score strong {
     font-size: 3rem;
     line-height: 1;
     color: var(--primary-gold);
 }
 
+/* gold star rating line */
 .reviews-stars {
     color: var(--primary-gold);
     letter-spacing: 2px;
     margin-bottom: 14px;
 }
 
+/* main spacing for the reviews content section */
 .reviews-section {
     padding: 88px 5%;
 }
 
+/* grid of testimonial/review cards */
 .reviews-grid {
     max-width: 1200px;
     margin: 0 auto 30px;
@@ -1449,15 +1723,18 @@ ul {
     gap: 28px;
 }
 
+/* individual review card spacing */
 .review-card {
     padding: 28px;
     border-radius: 20px;
 }
 
+/* space under each review paragraph */
 .review-card p {
     margin-bottom: 18px;
 }
 
+/* layout for name/meta and rating inside each review card */
 .review-author {
     display: flex;
     align-items: center;
@@ -1465,48 +1742,57 @@ ul {
     gap: 14px;
 }
 
+/* review author name styling */
 .review-author strong {
     color: var(--ink);
     display: block;
     margin-bottom: 4px;
 }
 
+/* review meta text styling */
 .review-author span {
     color: var(--soft-text);
     font-size: 0.95rem;
 }
 
+/* gold review rating text */
 .review-rating {
     color: var(--primary-gold);
     white-space: nowrap;
 }
 
+/* wrapper for a full-width highlight card if needed */
 .reviews-highlight-wrap {
     max-width: 1200px;
     margin: 0 auto;
 }
 
+/* highlight/supporting review content card */
 .reviews-highlight {
     padding: 32px;
     border-radius: 24px;
 }
 
+/* list inside the highlight card */
 .reviews-highlight ul {
     display: grid;
     gap: 12px;
     margin-top: 18px;
 }
 
+/* highlight list item text */
 .reviews-highlight li {
     color: var(--soft-text);
 }
 
+/* gold icon styling inside the highlight card list */
 .reviews-highlight i {
     color: var(--primary-gold);
     margin-right: 10px;
 }
 
-/* --- 13. Responsive Layout --- */
+/* ==================== Responsive Layout ==================== */
+/* first responsive step for medium screens and tablets */
 @media (max-width: 1100px) {
     .header-container,
     .site-header:not(header) {
@@ -1538,7 +1824,9 @@ ul {
     }
 }
 
+/* main mobile layout adjustments for header, grids, and hero spacing */
 @media (max-width: 768px) {
+
     .site-header,
     .header-container,
     .site-header:not(header) {
@@ -1550,7 +1838,7 @@ ul {
     .site-header:not(header) {
         min-height: auto;
         display: grid;
-        grid-template-columns: auto minmax(0, 1fr);
+        grid-template-columns: auto minmax(0, 1fr) auto;
         align-items: center;
         gap: 8px 10px;
         padding-top: 8px;
@@ -1568,10 +1856,13 @@ ul {
     }
 
     .primary-nav {
-        order: initial;
-        width: 100%;
-        grid-column: 1 / -1;
-        margin-top: 2px;
+        display: none;
+    }
+
+    .nav-toggle-button {
+        display: inline-flex;
+        grid-column: 3;
+        justify-self: end;
     }
 
     .header-actions {
@@ -1603,6 +1894,10 @@ ul {
         width: 34px;
         height: 34px;
         font-size: 0.82rem;
+    }
+
+    .mobile-nav {
+        display: block;
     }
 
     .primary-nav-list {
@@ -1701,13 +1996,15 @@ ul {
     }
 }
 
-/* --- 14. Inner Page Hero & Shared Split Layout --- */
+/* ==================== Inner Page Hero & Shared Split Layout ==================== */
+/* shared hero and split-panel system used by inner pages like products, about, reviews, and contact follow-up sections */
 .page-hero {
     padding: 96px 5% 72px;
     background: var(--soft-bg);
     color: var(--ink);
 }
 
+/* two-column layout used by shared inner-page hero/split sections */
 .page-hero-inner,
 .feature-split-grid {
     max-width: 1200px;
@@ -1718,10 +2015,12 @@ ul {
     align-items: stretch;
 }
 
+/* text column in the shared inner-page hero */
 .page-hero-copy {
     align-self: center;
 }
 
+/* shared large heading style for inner-page hero sections */
 .page-hero-copy h2 {
     font-size: clamp(2.3rem, 4.6vw, 4.15rem);
     line-height: 1.05;
@@ -1731,16 +2030,19 @@ ul {
     color: var(--ink);
 }
 
+/* supporting text in inner-page hero sections */
 .page-hero-copy p {
     max-width: 640px;
     color: var(--soft-text);
 }
 
+/* left-aligned button row for inner-page heroes */
 .page-hero-actions {
     justify-content: flex-start;
     margin-top: 28px;
 }
 
+/* shared panel/card styling used beside inner-page hero text and inside split follow-up sections */
 .page-hero-panel,
 .feature-panel {
     background: var(--soft-panel);
@@ -1749,11 +2051,13 @@ ul {
     box-shadow: 0 16px 35px rgba(30, 23, 14, 0.08);
 }
 
+/* spacing for the hero-side panel */
 .page-hero-panel {
     padding: 30px;
     align-self: center;
 }
 
+/* small label tag used on hero panels and accent panels */
 .panel-tag {
     display: inline-flex;
     align-items: center;
@@ -1768,46 +2072,55 @@ ul {
     letter-spacing: 1px;
 }
 
+/* checklist layout used inside multiple info panels */
 .panel-list {
     display: grid;
     gap: 14px;
 }
 
+/* checklist text styling inside panels */
 .panel-list li {
     color: var(--soft-text);
 }
 
+/* gold checklist icons inside panels */
 .panel-list i {
     color: var(--primary-gold);
     margin-right: 10px;
 }
 
+/* left-aligned section header variation */
 .section-header-left {
     text-align: left;
     margin: 0 0 28px;
 }
 
+/* this keeps intro text aligned to the left in left-header layouts */
 .section-header-left .section-intro {
     margin-left: 0;
     margin-right: 0;
 }
 
+/* this moves the decorative line to the left in left-header layouts */
 .section-header-left .section-line {
     margin-left: 0;
 }
 
+/* secondary button color adjustment on light inner-page panels */
 .page-hero .btn-secondary,
 .feature-split-section .btn-secondary {
     color: var(--ink);
     border-color: rgba(31, 26, 20, 0.18);
 }
 
+/* secondary button hover style on light inner-page panels */
 .page-hero .btn-secondary:hover,
 .feature-split-section .btn-secondary:hover {
     color: var(--primary-gold);
     border-color: var(--primary-gold);
 }
 
+/* shared spacing for category strip and split sections */
 .category-strip-section,
 .feature-split-section {
     padding: 0 5% 88px;
@@ -1815,6 +2128,7 @@ ul {
     color: var(--ink);
 }
 
+/* layout for the quick category chips on the products page */
 .category-strip {
     max-width: 1200px;
     margin: 0 auto;
@@ -1826,6 +2140,7 @@ ul {
     padding: 4px 0 0;
 }
 
+/* individual category chip/button style */
 .category-chip {
     display: inline-flex;
     align-items: center;
@@ -1840,58 +2155,69 @@ ul {
     transition: color var(--transition), border-color var(--transition), transform var(--transition);
 }
 
+/* hover state for category chips */
 .category-chip:hover {
     color: var(--primary-gold);
     border-color: var(--primary-gold);
     transform: translateY(-2px);
 }
 
+/* small meta line under product names on the products page */
 .product-meta {
     margin-bottom: 8px;
     color: var(--gray);
     font-size: 0.95rem;
 }
 
+/* base content panel used in the split follow-up sections */
 .feature-panel {
     padding: 34px 32px;
 }
 
+/* dark heading color inside light feature panels */
 .feature-panel .section-title,
 .feature-panel h3 {
     color: var(--ink);
 }
 
+/* left-aligned title spacing inside split panels */
 .feature-panel .section-title {
     text-align: left;
     margin-bottom: 12px;
 }
 
+/* intro paragraph spacing inside split panels */
 .feature-panel .section-intro {
     margin: 0 0 22px;
     max-width: none;
 }
 
+/* dark accent variation of the split panel */
 .accent-panel {
     background: #111111;
     border-color: rgba(197, 160, 89, 0.2);
 }
 
+/* white text inside the dark accent panel */
 .accent-panel h3,
 .accent-panel p {
     color: var(--white);
 }
 
+/* outlined button styling inside the dark accent panel */
 .accent-panel .btn-secondary {
     color: var(--white);
     border-color: rgba(255, 255, 255, 0.6);
 }
 
+/* hover style for the accent panel secondary button */
 .accent-panel .btn-secondary:hover {
     color: var(--primary-gold);
     border-color: var(--primary-gold);
 }
 
-/* --- 15. Extended Responsive Rules --- */
+/* ==================== Extended Responsive Rules ==================== */
+/* tablet adjustment for the shared inner-page split layouts */
 @media (max-width: 1100px) {
     .page-hero-inner,
     .feature-split-grid {
@@ -1899,6 +2225,7 @@ ul {
     }
 }
 
+/* mobile adjustment for inner-page hero, category strip, and split layout sections */
 @media (max-width: 768px) {
     .page-hero,
     .category-strip-section,
@@ -1942,3 +2269,4 @@ ul {
         width: 100%;
     }
 }
+

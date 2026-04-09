@@ -9,40 +9,65 @@
 </head>
 <body>
 
+    <!-- Header -->
     <header class="site-header">
         <div class="header-container">
             <a href="index.html" class="logo-link">
                 <img class="site-logo" src="Photos/logo_Nero_AI_Background_Remover_transparent.png" alt="Lord Corner Logo">
             </a>
+            <input type="checkbox" id="nav-toggle-products" class="nav-toggle">
             <nav class="primary-nav">
                 <ul class="primary-nav-list">
-                    <li><a href="index.html" class="primary-nav-link">Home</a></li>
-                    <li><a href="products.html" class="primary-nav-link active">Products</a></li>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="products.html" class="nav-link active">Products</a></li>
                     <li class="collection-menu">
-                        <a href="collection.html" class="primary-nav-link">Collections</a>
+                        <a href="collection.html" class="nav-link">Collections</a>
                         <ul class="collection-dropdown">
                             <li><a href="collection.html#curated-edit" class="dropdown-nav-link">Curated Edit</a></li>
                             <li><a href="collection.html#featured-sets" class="dropdown-nav-link">Featured Sets</a></li>
                             <li><a href="collection.html#seasonal-picks" class="dropdown-nav-link">Seasonal Picks</a></li>
                         </ul>
                     </li>
-                    <li><a href="about.html" class="primary-nav-link">Why Choose Us</a></li>
-                    <li><a href="reviews.html" class="primary-nav-link">Reviews</a></li>
-                    <li><a href="contact.html" class="primary-nav-link">Contact</a></li>
-                </ul>
-            </nav>
+                    <li><a href="about.html" class="nav-link">Why Choose Us</a></li>
+                    <li><a href="reviews.html" class="nav-link">Reviews</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul> <!-- /primary-nav-list -->
+            </nav> <!-- /primary-nav -->
             <div class="header-actions">
                 <div class="header-search">
                     <i class="fa-solid fa-magnifying-glass"></i>
                     <input type="search" placeholder="Search products...">
-                </div>
+                </div> <!-- /header-search -->
                 <div class="cart-icon">
                     <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-            </div>
-        </div>
-    </header>
+                </div> <!-- /cart-icon -->
+            </div> <!-- /header-actions -->
 
+            <label for="nav-toggle-products" class="nav-toggle-button" aria-label="Toggle navigation">
+                <span></span>
+            </label> <!-- /nav-toggle-button -->
+
+            <div class="mobile-nav">
+                <div class="mobile-nav-list">
+                    <a href="index.html" class="mobile-nav-link">Home</a>
+                    <a href="products.html" class="mobile-nav-link active">Products</a>
+                    <div class="mobile-nav-group">
+                        <a href="collection.html" class="mobile-nav-link">Collections</a>
+                        <div class="mobile-submenu">
+                            <a href="collection.html#curated-edit">Curated Edit</a>
+                            <a href="collection.html#featured-sets">Featured Sets</a>
+                            <a href="collection.html#seasonal-picks">Seasonal Picks</a>
+                        </div>
+                    </div>
+                    <a href="about.html" class="mobile-nav-link">Why Choose Us</a>
+                    <a href="reviews.html" class="mobile-nav-link">Reviews</a>
+                    <a href="contact.html" class="mobile-nav-link">Contact</a>
+                </div> <!-- /mobile-nav-list -->
+            </div> <!-- /mobile-nav -->
+        </div> <!-- /header-container -->
+    </header> <!-- /header -->
+
+    <!-- Products Hero -->
     <section class="page-hero products-hero">
         <div class="page-hero-inner">
             <div class="page-hero-copy">
@@ -66,10 +91,11 @@
                     <li><i class="fa-solid fa-check"></i> Relaxed streetwear layers for easy styling</li>
                     <li><i class="fa-solid fa-check"></i> Curated picks that balance quality and value</li>
                 </ul>
-            </div>
-        </div>
-    </section>
+            </div> <!-- /page-hero-panel -->
+        </div> <!-- /page-hero-inner -->
+    </section> <!-- /products-hero -->
 
+    <!-- Product Categories -->
     <section class="category-strip-section">
         <div class="category-strip">
             <a href="#catalog" class="category-chip">Sneakers</a>
@@ -77,9 +103,10 @@
             <a href="#catalog" class="category-chip">Oversized Fits</a>
             <a href="#catalog" class="category-chip">Street Sets</a>
             <a href="#catalog" class="category-chip">New Picks</a>
-        </div>
-    </section>
+        </div> <!-- /category-strip -->
+    </section> <!-- /product-categories -->
 
+    <!-- Products Catalog -->
     <section class="products-section" id="catalog">
         <div class="section-header">
             <span class="section-subtitle">Main Catalog</span>
@@ -97,15 +124,15 @@
                         <div class="product-actions">
                             <button title="Add to Wishlist"><i class="fa-solid fa-heart"></i></button>
                             <button title="Quick Add"><i class="fa-solid fa-cart-plus"></i></button>
-                        </div>
-                    </div>
-                </div>
+                        </div> <!-- /product-actions -->
+                    </div> <!-- /product-overlay -->
+                </div> <!-- /product-image-container -->
                 <div class="product-info">
                     <h3>Air Sneakers</h3>
                     <p class="product-meta">Clean finish | Everyday wear</p>
                     <p class="product-price">$89.00</p>
-                </div>
-            </article>
+                </div> <!-- /product-info -->
+            </article> <!-- /product-card -->
 
             <article class="product-card">
                 <div class="product-image-container">
@@ -115,15 +142,15 @@
                         <div class="product-actions">
                             <button title="Add to Wishlist"><i class="fa-solid fa-heart"></i></button>
                             <button title="Quick Add"><i class="fa-solid fa-cart-plus"></i></button>
-                        </div>
-                    </div>
-                </div>
+                        </div> <!-- /product-actions -->
+                    </div> <!-- /product-overlay -->
+                </div> <!-- /product-image-container -->
                 <div class="product-info">
                     <h3>Urban Hoodie</h3>
                     <p class="product-meta">Layering staple | Soft structure</p>
                     <p class="product-price">$74.00</p>
-                </div>
-            </article>
+                </div> <!-- /product-info -->
+            </article> <!-- /product-card -->
 
             <article class="product-card">
                 <div class="product-image-container">
@@ -133,15 +160,15 @@
                         <div class="product-actions">
                             <button title="Add to Wishlist"><i class="fa-solid fa-heart"></i></button>
                             <button title="Quick Add"><i class="fa-solid fa-cart-plus"></i></button>
-                        </div>
-                    </div>
-                </div>
+                        </div> <!-- /product-actions -->
+                    </div> <!-- /product-overlay -->
+                </div> <!-- /product-image-container -->
                 <div class="product-info">
                     <h3>Urban Runner</h3>
                     <p class="product-meta">Sport-inspired | Premium cushioning</p>
                     <p class="product-price">$92.00</p>
-                </div>
-            </article>
+                </div> <!-- /product-info -->
+            </article> <!-- /product-card -->
 
             <article class="product-card">
                 <div class="product-image-container">
@@ -151,15 +178,15 @@
                         <div class="product-actions">
                             <button title="Add to Wishlist"><i class="fa-solid fa-heart"></i></button>
                             <button title="Quick Add"><i class="fa-solid fa-cart-plus"></i></button>
-                        </div>
-                    </div>
-                </div>
+                        </div> <!-- /product-actions -->
+                    </div> <!-- /product-overlay -->
+                </div> <!-- /product-image-container -->
                 <div class="product-info">
                     <h3>Urban Set</h3>
                     <p class="product-meta">Matched look | Street-ready finish</p>
                     <p class="product-price">$96.00</p>
-                </div>
-            </article>
+                </div> <!-- /product-info -->
+            </article> <!-- /product-card -->
 
             <article class="product-card">
                 <div class="product-image-container">
@@ -169,15 +196,15 @@
                         <div class="product-actions">
                             <button title="Add to Wishlist"><i class="fa-solid fa-heart"></i></button>
                             <button title="Quick Add"><i class="fa-solid fa-cart-plus"></i></button>
-                        </div>
-                    </div>
-                </div>
+                        </div> <!-- /product-actions -->
+                    </div> <!-- /product-overlay -->
+                </div> <!-- /product-image-container -->
                 <div class="product-info">
                     <h3>Oversized Fit</h3>
                     <p class="product-meta">Relaxed cut | Everyday comfort</p>
                     <p class="product-price">$68.00</p>
-                </div>
-            </article>
+                </div> <!-- /product-info -->
+            </article> <!-- /product-card -->
 
             <article class="product-card">
                 <div class="product-image-container">
@@ -187,18 +214,19 @@
                         <div class="product-actions">
                             <button title="Add to Wishlist"><i class="fa-solid fa-heart"></i></button>
                             <button title="Quick Add"><i class="fa-solid fa-cart-plus"></i></button>
-                        </div>
-                    </div>
-                </div>
+                        </div> <!-- /product-actions -->
+                    </div> <!-- /product-overlay -->
+                </div> <!-- /product-image-container -->
                 <div class="product-info">
                     <h3>Run Street Shoes</h3>
                     <p class="product-meta">Lightweight feel | Clean profile</p>
                     <p class="product-price">$84.00</p>
-                </div>
-            </article>
-        </div>
-    </section>
+                </div> <!-- /product-info -->
+            </article> <!-- /product-card -->
+        </div> <!-- /product-grid -->
+    </section> <!-- /products-catalog -->
 
+    <!-- Products Follow Up -->
     <section class="feature-split-section">
         <div class="feature-split-grid">
             <article class="feature-panel">
@@ -221,9 +249,10 @@
                     <a href="about.html" class="btn btn-secondary">Why Choose Us</a>
                 </div>
             </article>
-        </div>
-    </section>
+        </div> <!-- /feature-split-grid -->
+    </section> <!-- /products-follow-up -->
 
+    <!-- Footer -->
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-brand">
@@ -248,13 +277,13 @@
                     <a href="https://www.instagram.com/m7md.tomeh/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
                     <a href="https://www.linkedin.com/in/mohammad-tomeh-3a568034b/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
                     <a href="https://wa.me/972599396976" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-                </div>
-            </div>
-        </div>
+                </div> <!-- /social-icons -->
+            </div> <!-- /footer-social -->
+        </div> <!-- /footer-container -->
         <div class="footer-bottom">
             <p>&copy; 2026 Lord Corner | Mohammad Tomeh. All Rights Reserved.</p>
-        </div>
-    </footer>
+        </div> <!-- /footer-bottom -->
+    </footer> <!-- /footer -->
 
 </body>
 </html>

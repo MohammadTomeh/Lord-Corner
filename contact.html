@@ -9,40 +9,65 @@
 </head>
 <body>
 
+    <!-- Header -->
     <header class="site-header">
         <div class="header-container">
             <a href="index.html" class="logo-link">
                 <img class="site-logo" src="Photos/logo_Nero_AI_Background_Remover_transparent.png" alt="Lord Corner Logo">
             </a>
+            <input type="checkbox" id="nav-toggle-contact" class="nav-toggle">
             <nav class="primary-nav">
                 <ul class="primary-nav-list">
-                    <li><a href="index.html" class="primary-nav-link">Home</a></li>
-                    <li><a href="products.html" class="primary-nav-link">Products</a></li>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="products.html" class="nav-link">Products</a></li>
                     <li class="collection-menu">
-                        <a href="collection.html" class="primary-nav-link">Collections</a>
+                        <a href="collection.html" class="nav-link">Collections</a>
                         <ul class="collection-dropdown">
                             <li><a href="collection.html#curated-edit" class="dropdown-nav-link">Curated Edit</a></li>
                             <li><a href="collection.html#featured-sets" class="dropdown-nav-link">Featured Sets</a></li>
                             <li><a href="collection.html#seasonal-picks" class="dropdown-nav-link">Seasonal Picks</a></li>
                         </ul>
                     </li>
-                    <li><a href="about.html" class="primary-nav-link">Why Choose Us</a></li>
-                    <li><a href="reviews.html" class="primary-nav-link">Reviews</a></li>
-                    <li><a href="contact.html" class="primary-nav-link active">Contact</a></li>
-                </ul>
-            </nav>
+                    <li><a href="about.html" class="nav-link">Why Choose Us</a></li>
+                    <li><a href="reviews.html" class="nav-link">Reviews</a></li>
+                    <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                </ul> <!-- /primary-nav-list -->
+            </nav> <!-- /primary-nav -->
             <div class="header-actions">
                 <div class="header-search">
                     <i class="fa-solid fa-magnifying-glass"></i>
                     <input type="search" placeholder="Search support topics...">
-                </div>
+                </div> <!-- /header-search -->
                 <div class="cart-icon">
                     <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-            </div>
-        </div>
-    </header>
+                </div> <!-- /cart-icon -->
+            </div> <!-- /header-actions -->
 
+            <label for="nav-toggle-contact" class="nav-toggle-button" aria-label="Toggle navigation">
+                <span></span>
+            </label> <!-- /nav-toggle-button -->
+
+            <div class="mobile-nav">
+                <div class="mobile-nav-list">
+                    <a href="index.html" class="mobile-nav-link">Home</a>
+                    <a href="products.html" class="mobile-nav-link">Products</a>
+                    <div class="mobile-nav-group">
+                        <a href="collection.html" class="mobile-nav-link">Collections</a>
+                        <div class="mobile-submenu">
+                            <a href="collection.html#curated-edit">Curated Edit</a>
+                            <a href="collection.html#featured-sets">Featured Sets</a>
+                            <a href="collection.html#seasonal-picks">Seasonal Picks</a>
+                        </div>
+                    </div>
+                    <a href="about.html" class="mobile-nav-link">Why Choose Us</a>
+                    <a href="reviews.html" class="mobile-nav-link">Reviews</a>
+                    <a href="contact.html" class="mobile-nav-link active">Contact</a>
+                </div> <!-- /mobile-nav-list -->
+            </div> <!-- /mobile-nav -->
+        </div> <!-- /header-container -->
+    </header> <!-- /header -->
+
+    <!-- Contact Hero -->
     <section class="contact-hero">
         <div class="contact-hero-inner">
             <div class="contact-hero-copy">
@@ -66,20 +91,21 @@
                     <div>
                         <strong>Email</strong>
                         <a class="contact-detail-link" href="mailto:mohammadjtomeh@email.com">mohammadjtomeh@email.com</a>
-                    </div>
+                    </div> <!-- /detail-item -->
                     <div>
                         <strong>WhatsApp</strong>
                         <a class="contact-detail-link" href="https://wa.me/972599396976" target="_blank">+972 599 396 976</a>
-                    </div>
+                    </div> <!-- /detail-item -->
                     <div>
                         <strong>Instagram</strong>
                         <a class="contact-detail-link" href="https://www.instagram.com/m7md.tomeh/" target="_blank">@m7md.tomeh</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                    </div> <!-- /detail-item -->
+                </div> <!-- /detail-list -->
+            </div> <!-- /contact-hero-card -->
+        </div> <!-- /contact-hero-inner -->
+    </section> <!-- /contact-hero -->
 
+    <!-- Contact Content -->
     <section class="contact-section">
         <div class="contact-methods">
             <article class="contact-method">
@@ -87,21 +113,21 @@
                 <h3>Email Support</h3>
                 <p>Best for order details, partnerships, or questions that need a full written reply.</p>
                 <a href="mailto:mohammadjtomeh@email.com">Send an Email</a>
-            </article>
+            </article> <!-- /contact-method -->
 
             <article class="contact-method">
                 <i class="fa-brands fa-whatsapp"></i>
                 <h3>WhatsApp</h3>
                 <p>Quick contact for availability, sizing checks, and faster direct communication.</p>
                 <a href="https://wa.me/972599396976" target="_blank">Start a Chat</a>
-            </article>
+            </article> <!-- /contact-method -->
 
             <article class="contact-method">
                 <i class="fa-brands fa-instagram"></i>
                 <h3>Instagram</h3>
                 <p>Stay connected through social for drops, styling inspiration, and messages.</p>
                 <a href="https://www.instagram.com/m7md.tomeh/" target="_blank">Visit Profile</a>
-            </article>
+            </article> <!-- /contact-method -->
         </div>
 
         <div class="contact-grid">
@@ -134,8 +160,8 @@
                         <textarea name="message" placeholder="Tell us what you need."></textarea>
                     </label>
                     <button type="submit" class="btn btn-primary">Send Inquiry</button>
-                </form>
-            </div>
+                </form> <!-- /contact-form -->
+            </div> <!-- /contact-form-card -->
 
             <div class="contact-details-card">
                 <h3>Store Information</h3>
@@ -144,23 +170,24 @@
                     <div>
                         <strong>Support Hours</strong>
                         <span>Saturday - Thursday, 10:00 AM to 8:00 PM</span>
-                    </div>
+                    </div> <!-- /detail-item -->
                     <div>
                         <strong>Primary Contact</strong>
                         <span>Mohammad Tomeh</span>
-                    </div>
+                    </div> <!-- /detail-item -->
                     <div>
                         <strong>Best Response Channels</strong>
                         <span>Email and WhatsApp for the fastest follow-up</span>
-                    </div>
-                </div>
+                    </div> <!-- /detail-item -->
+                </div> <!-- /detail-list -->
                 <div class="contact-note">
                     Need help choosing between products or collections? Share your preferred fit, size, and style direction and we can guide you faster.
-                </div>
-            </div>
-        </div>
-    </section>
+                </div> <!-- /contact-note -->
+            </div> <!-- /contact-details-card -->
+        </div> <!-- /contact-grid -->
+    </section> <!-- /contact-content -->
 
+    <!-- Contact Follow Up -->
     <section class="feature-split-section">
         <div class="feature-split-grid">
             <article class="feature-panel">
@@ -183,9 +210,10 @@
                     <a href="collection.html" class="btn btn-secondary">Browse Collections</a>
                 </div>
             </article>
-        </div>
-    </section>
+        </div> <!-- /feature-split-grid -->
+    </section> <!-- /contact-follow-up -->
 
+    <!-- Footer -->
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-brand">
@@ -210,13 +238,13 @@
                     <a href="https://www.instagram.com/m7md.tomeh/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
                     <a href="mailto:mohammadjtomeh@email.com"><i class="fa-solid fa-at"></i></a>
                     <a href="https://wa.me/972599396976" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-                </div>
-            </div>
-        </div>
+                </div> <!-- /social-icons -->
+            </div> <!-- /footer-social -->
+        </div> <!-- /footer-container -->
         <div class="footer-bottom">
             <p>&copy; 2026 Lord Corner | Mohammad Tomeh. All Rights Reserved.</p>
-        </div>
-    </footer>
+        </div> <!-- /footer-bottom -->
+    </footer> <!-- /footer -->
 
 </body>
 </html>

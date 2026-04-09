@@ -9,42 +9,67 @@
 </head>
 <body>
 
+    <!-- Header -->
     <header class="site-header">
         <div class="header-container">
             <a href="index.html" class="logo-link">
                 <img class="site-logo" src="Photos/logo_Nero_AI_Background_Remover_transparent.png" alt="Lord Corner Logo">
             </a>
+            <input type="checkbox" id="nav-toggle-collection" class="nav-toggle">
 
             <nav class="primary-nav">
                 <ul class="primary-nav-list">
-                    <li><a href="index.html" class="primary-nav-link">Home</a></li>
-                    <li><a href="products.html" class="primary-nav-link">Products</a></li>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="products.html" class="nav-link">Products</a></li>
                     <li class="collection-menu">
-                        <a href="collection.html" class="primary-nav-link active">Collections</a>
+                        <a href="collection.html" class="nav-link active">Collections</a>
                         <ul class="collection-dropdown">
                             <li><a href="#curated-edit" class="dropdown-nav-link">Curated Edit</a></li>
                             <li><a href="#featured-sets" class="dropdown-nav-link">Featured Sets</a></li>
                             <li><a href="#seasonal-picks" class="dropdown-nav-link">Seasonal Picks</a></li>
                         </ul>
                     </li>
-                    <li><a href="about.html" class="primary-nav-link">Why Choose Us</a></li>
-                    <li><a href="reviews.html" class="primary-nav-link">Reviews</a></li>
-                    <li><a href="contact.html" class="primary-nav-link">Contact</a></li>
-                </ul>
-            </nav>
+                    <li><a href="about.html" class="nav-link">Why Choose Us</a></li>
+                    <li><a href="reviews.html" class="nav-link">Reviews</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul> <!-- /primary-nav-list -->
+            </nav> <!-- /primary-nav -->
 
             <div class="header-actions">
                 <div class="header-search">
                     <i class="fa-solid fa-magnifying-glass"></i>
                     <input type="search" placeholder="Search the collection...">
-                </div>
+                </div> <!-- /header-search -->
                 <div class="cart-icon">
                     <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-            </div>
-        </div>
-    </header>
+                </div> <!-- /cart-icon -->
+            </div> <!-- /header-actions -->
 
+            <label for="nav-toggle-collection" class="nav-toggle-button" aria-label="Toggle navigation">
+                <span></span>
+            </label> <!-- /nav-toggle-button -->
+
+            <div class="mobile-nav">
+                <div class="mobile-nav-list">
+                    <a href="index.html" class="mobile-nav-link">Home</a>
+                    <a href="products.html" class="mobile-nav-link">Products</a>
+                    <div class="mobile-nav-group">
+                        <a href="collection.html" class="mobile-nav-link active">Collections</a>
+                        <div class="mobile-submenu">
+                            <a href="#curated-edit">Curated Edit</a>
+                            <a href="#featured-sets">Featured Sets</a>
+                            <a href="#seasonal-picks">Seasonal Picks</a>
+                        </div>
+                    </div>
+                    <a href="about.html" class="mobile-nav-link">Why Choose Us</a>
+                    <a href="reviews.html" class="mobile-nav-link">Reviews</a>
+                    <a href="contact.html" class="mobile-nav-link">Contact</a>
+                </div> <!-- /mobile-nav-list -->
+            </div> <!-- /mobile-nav -->
+        </div> <!-- /header-container -->
+    </header> <!-- /header -->
+
+    <!-- Collections Hero -->
     <section class="collection-hero">
         <div class="collection-hero-inner">
             <div class="collection-hero-copy">
@@ -62,10 +87,11 @@
             </div>
             <div class="collection-hero-visual">
                 <img src="Photos/style.avif" alt="Curated streetwear styling">
-            </div>
-        </div>
-    </section>
+            </div> <!-- /collection-hero-visual -->
+        </div> <!-- /collection-hero-inner -->
+    </section> <!-- /collections-hero -->
 
+    <!-- Curated Edit -->
     <section class="collection-showcase" id="curated-edit">
         <div class="section-header">
             <span class="section-subtitle">Curated Edit</span>
@@ -82,9 +108,9 @@
                         <span class="curated-card-tag">Editorial Set</span>
                         <h3>Urban Layering</h3>
                         <p>Oversized silhouettes, warm neutrals, and premium footwear for a balanced city-ready fit.</p>
-                    </div>
-                </div>
-            </article>
+                    </div> <!-- /curated-card-copy -->
+                </div> <!-- /curated-card-overlay -->
+            </article> <!-- /curated-card -->
 
             <article class="curated-card small">
                 <img src="Photos/hoodie.avif" alt="Signature hoodie rotation">
@@ -93,9 +119,9 @@
                         <span class="curated-card-tag">Core Essential</span>
                         <h3>Signature Hoodie Rotation</h3>
                         <p>Comfort-driven layers that anchor daily outfits without losing a sharp visual edge.</p>
-                    </div>
-                </div>
-            </article>
+                    </div> <!-- /curated-card-copy -->
+                </div> <!-- /curated-card-overlay -->
+            </article> <!-- /curated-card -->
 
             <article class="curated-card small">
                 <img src="Photos/products-sneakers2.jpg" alt="Sneaker pairing">
@@ -104,9 +130,9 @@
                         <span class="curated-card-tag">Footwear Focus</span>
                         <h3>Sneaker Pairings</h3>
                         <p>Clean footwear combinations selected to finish each look with stronger shape and contrast.</p>
-                    </div>
-                </div>
-            </article>
+                    </div> <!-- /curated-card-copy -->
+                </div> <!-- /curated-card-overlay -->
+            </article> <!-- /curated-card -->
 
             <article class="curated-card large">
                 <img src="Photos/Oversized Fit.avif" alt="Oversized essentials">
@@ -115,12 +141,13 @@
                         <span class="curated-card-tag">Relaxed Edit</span>
                         <h3>Oversized Essentials</h3>
                         <p>Easy layers and premium fabrics for comfort-first styling that still feels intentional.</p>
-                    </div>
-                </div>
-            </article>
-        </div>
-    </section>
+                    </div> <!-- /curated-card-copy -->
+                </div> <!-- /curated-card-overlay -->
+            </article> <!-- /curated-card -->
+        </div> <!-- /curated-grid -->
+    </section> <!-- /curated-edit -->
 
+    <!-- Featured Sets -->
     <section class="collection-showcase" id="featured-sets">
         <div class="section-header">
             <span class="section-subtitle">Featured Sets</span>
@@ -138,7 +165,7 @@
                     <li>Clean footwear pairing for easy repeat wear</li>
                     <li>Muted palette that stays versatile</li>
                 </ul>
-            </article>
+            </article> <!-- /season-card -->
 
             <article class="season-card">
                 <h3>Night Run Edit</h3>
@@ -148,7 +175,7 @@
                     <li>Footwear with stronger shape and contrast</li>
                     <li>Lightweight elements that keep the look polished</li>
                 </ul>
-            </article>
+            </article> <!-- /season-card -->
 
             <article class="season-card">
                 <h3>Daily Rotation</h3>
@@ -158,10 +185,11 @@
                     <li>Balanced fit proportions</li>
                     <li>Easy styling across different days</li>
                 </ul>
-            </article>
-        </div>
-    </section>
+            </article> <!-- /season-card -->
+        </div> <!-- /season-grid -->
+    </section> <!-- /featured-sets -->
 
+    <!-- Seasonal Picks -->
     <section class="collection-showcase" id="seasonal-picks">
         <div class="section-header">
             <span class="section-subtitle">Seasonal Picks</span>
@@ -174,18 +202,19 @@
             <article class="season-card">
                 <h3>Spring Transitions</h3>
                 <p>Layered options and softer textures for in-between weather without losing depth or shape.</p>
-            </article>
+            </article> <!-- /season-card -->
             <article class="season-card">
                 <h3>Warm Weather Staples</h3>
                 <p>Breathable fits and lighter styling choices made for movement, comfort, and low-effort polish.</p>
-            </article>
+            </article> <!-- /season-card -->
             <article class="season-card">
                 <h3>Statement Neutrals</h3>
                 <p>Grounded tones that let the cut, proportions, and footwear do more of the visual work.</p>
-            </article>
-        </div>
-    </section>
+            </article> <!-- /season-card -->
+        </div> <!-- /season-grid -->
+    </section> <!-- /seasonal-picks -->
 
+    <!-- Collections Follow Up -->
     <section class="feature-split-section">
         <div class="feature-split-grid">
             <article class="feature-panel">
@@ -208,9 +237,10 @@
                     <a href="about.html" class="btn btn-secondary">Why Choose Us</a>
                 </div>
             </article>
-        </div>
-    </section>
+        </div> <!-- /feature-split-grid -->
+    </section> <!-- /collections-follow-up -->
 
+    <!-- Footer -->
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-brand">
@@ -235,13 +265,13 @@
                     <a href="https://www.instagram.com/m7md.tomeh/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
                     <a href="https://github.com/MohammadTomeh" target="_blank"><i class="fa-brands fa-github"></i></a>
                     <a href="https://wa.me/972599396976" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-                </div>
-            </div>
-        </div>
+                </div> <!-- /social-icons -->
+            </div> <!-- /footer-social -->
+        </div> <!-- /footer-container -->
         <div class="footer-bottom">
             <p>&copy; 2026 Lord Corner | Mohammad Tomeh. All Rights Reserved.</p>
-        </div>
-    </footer>
+        </div> <!-- /footer-bottom -->
+    </footer> <!-- /footer -->
 
 </body>
 </html>

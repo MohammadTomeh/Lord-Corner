@@ -9,40 +9,65 @@
 </head>
 <body>
 
+    <!-- Header -->
     <header class="site-header">
         <div class="header-container">
             <a href="index.html" class="logo-link">
                 <img class="site-logo" src="Photos/logo_Nero_AI_Background_Remover_transparent.png" alt="Lord Corner Logo">
             </a>
+            <input type="checkbox" id="nav-toggle-about" class="nav-toggle">
             <nav class="primary-nav">
                 <ul class="primary-nav-list">
-                    <li><a href="index.html" class="primary-nav-link">Home</a></li>
-                    <li><a href="products.html" class="primary-nav-link">Products</a></li>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="products.html" class="nav-link">Products</a></li>
                     <li class="collection-menu">
-                        <a href="collection.html" class="primary-nav-link">Collections</a>
+                        <a href="collection.html" class="nav-link">Collections</a>
                         <ul class="collection-dropdown">
                             <li><a href="collection.html#curated-edit" class="dropdown-nav-link">Curated Edit</a></li>
                             <li><a href="collection.html#featured-sets" class="dropdown-nav-link">Featured Sets</a></li>
                             <li><a href="collection.html#seasonal-picks" class="dropdown-nav-link">Seasonal Picks</a></li>
                         </ul>
                     </li>
-                    <li><a href="about.html" class="primary-nav-link active">Why Choose Us</a></li>
-                    <li><a href="reviews.html" class="primary-nav-link">Reviews</a></li>
-                    <li><a href="contact.html" class="primary-nav-link">Contact</a></li>
-                </ul>
-            </nav>
+                    <li><a href="about.html" class="nav-link active">Why Choose Us</a></li>
+                    <li><a href="reviews.html" class="nav-link">Reviews</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul> <!-- /primary-nav-list -->
+            </nav> <!-- /primary-nav -->
             <div class="header-actions">
                 <div class="header-search">
                     <i class="fa-solid fa-magnifying-glass"></i>
                     <input type="search" placeholder="Search the brand...">
-                </div>
+                </div> <!-- /header-search -->
                 <div class="cart-icon">
                     <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-            </div>
-        </div>
-    </header>
+                </div> <!-- /cart-icon -->
+            </div> <!-- /header-actions -->
 
+            <label for="nav-toggle-about" class="nav-toggle-button" aria-label="Toggle navigation">
+                <span></span>
+            </label> <!-- /nav-toggle-button -->
+
+            <div class="mobile-nav">
+                <div class="mobile-nav-list">
+                    <a href="index.html" class="mobile-nav-link">Home</a>
+                    <a href="products.html" class="mobile-nav-link">Products</a>
+                    <div class="mobile-nav-group">
+                        <a href="collection.html" class="mobile-nav-link">Collections</a>
+                        <div class="mobile-submenu">
+                            <a href="collection.html#curated-edit">Curated Edit</a>
+                            <a href="collection.html#featured-sets">Featured Sets</a>
+                            <a href="collection.html#seasonal-picks">Seasonal Picks</a>
+                        </div>
+                    </div>
+                    <a href="about.html" class="mobile-nav-link active">Why Choose Us</a>
+                    <a href="reviews.html" class="mobile-nav-link">Reviews</a>
+                    <a href="contact.html" class="mobile-nav-link">Contact</a>
+                </div> <!-- /mobile-nav-list -->
+            </div> <!-- /mobile-nav -->
+        </div> <!-- /header-container -->
+    </header> <!-- /header -->
+
+    <!-- Why Choose Us Hero -->
     <section class="page-hero">
         <div class="page-hero-inner">
             <div class="page-hero-copy">
@@ -65,10 +90,11 @@
                     <li><i class="fa-solid fa-check"></i> Curated selections instead of random products</li>
                     <li><i class="fa-solid fa-check"></i> A clear blend of style, trust, and customer support</li>
                 </ul>
-            </div>
-        </div>
-    </section>
+            </div> <!-- /page-hero-panel -->
+        </div> <!-- /page-hero-inner -->
+    </section> <!-- /why-choose-us-hero -->
 
+    <!-- Our Story -->
     <section class="about-section" id="story">
         <div class="about-layout">
             <div class="about-copy">
@@ -97,10 +123,11 @@
                 <div class="about-photo-frame">
                     <img src="Photos/outfit.avif" alt="Lord Corner outfit showcase">
                 </div>
-            </div>
-        </div>
-    </section>
+            </div> <!-- /about-visual -->
+        </div> <!-- /about-layout -->
+    </section> <!-- /our-story -->
 
+    <!-- What You Get -->
     <section class="offers-section" id="value">
         <div class="section-header">
             <span class="section-subtitle">What You Get</span>
@@ -116,9 +143,9 @@
                     <div class="offer-copy">
                         <h3 class="offer-title">Premium Sneakers</h3>
                         <p class="offer-description">Footwear selected for comfort, shape, and styling value across multiple looks.</p>
-                    </div>
-                </div>
-            </article>
+                    </div> <!-- /offer-copy -->
+                </div> <!-- /offer-card-content -->
+            </article> <!-- /offer-card -->
 
             <article class="offer-card">
                 <div class="offer-card-content">
@@ -126,9 +153,9 @@
                     <div class="offer-copy">
                         <h3 class="offer-title">Streetwear Clothing</h3>
                         <p class="offer-description">Core layers and oversized pieces that feel current, wearable, and easy to repeat.</p>
-                    </div>
-                </div>
-            </article>
+                    </div> <!-- /offer-copy -->
+                </div> <!-- /offer-card-content -->
+            </article> <!-- /offer-card -->
 
             <article class="offer-card">
                 <div class="offer-card-content">
@@ -136,9 +163,9 @@
                     <div class="offer-copy">
                         <h3 class="offer-title">Curated Trends</h3>
                         <p class="offer-description">Collections and featured picks with stronger fashion direction than a basic store grid.</p>
-                    </div>
-                </div>
-            </article>
+                    </div> <!-- /offer-copy -->
+                </div> <!-- /offer-card-content -->
+            </article> <!-- /offer-card -->
 
             <article class="offer-card">
                 <div class="offer-card-content">
@@ -146,9 +173,9 @@
                     <div class="offer-copy">
                         <h3 class="offer-title">Fast Delivery</h3>
                         <p class="offer-description">A smoother post-purchase experience built on speed, reliability, and communication.</p>
-                    </div>
-                </div>
-            </article>
+                    </div> <!-- /offer-copy -->
+                </div> <!-- /offer-card-content -->
+            </article> <!-- /offer-card -->
 
             <article class="offer-card">
                 <div class="offer-card-content">
@@ -156,9 +183,9 @@
                     <div class="offer-copy">
                         <h3 class="offer-title">Best Value</h3>
                         <p class="offer-description">Premium visual quality and stronger styling without pushing the brand out of reach.</p>
-                    </div>
-                </div>
-            </article>
+                    </div> <!-- /offer-copy -->
+                </div> <!-- /offer-card-content -->
+            </article> <!-- /offer-card -->
 
             <article class="offer-card">
                 <div class="offer-card-content">
@@ -166,12 +193,13 @@
                     <div class="offer-copy">
                         <h3 class="offer-title">Style Guidance</h3>
                         <p class="offer-description">Better support for building looks, pairing sneakers, and choosing the right fit direction.</p>
-                    </div>
-                </div>
-            </article>
-        </div>
-    </section>
+                    </div> <!-- /offer-copy -->
+                </div> <!-- /offer-card-content -->
+            </article> <!-- /offer-card -->
+        </div> <!-- /offers-grid -->
+    </section> <!-- /what-you-get -->
 
+    <!-- Why Choose Us Follow Up -->
     <section class="feature-split-section">
         <div class="feature-split-grid">
             <article class="feature-panel">
@@ -194,9 +222,10 @@
                     <a href="products.html" class="btn btn-secondary">Shop Now</a>
                 </div>
             </article>
-        </div>
-    </section>
+        </div> <!-- /feature-split-grid -->
+    </section> <!-- /why-choose-us-follow-up -->
 
+    <!-- Footer -->
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-brand">
@@ -221,13 +250,13 @@
                     <a href="https://www.instagram.com/m7md.tomeh/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
                     <a href="https://www.linkedin.com/in/mohammad-tomeh-3a568034b/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
                     <a href="https://wa.me/972599396976" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-                </div>
-            </div>
-        </div>
+                </div> <!-- /social-icons -->
+            </div> <!-- /footer-social -->
+        </div> <!-- /footer-container -->
         <div class="footer-bottom">
             <p>&copy; 2026 Lord Corner | Mohammad Tomeh. All Rights Reserved.</p>
-        </div>
-    </footer>
+        </div> <!-- /footer-bottom -->
+    </footer> <!-- /footer -->
 
 </body>
 </html>

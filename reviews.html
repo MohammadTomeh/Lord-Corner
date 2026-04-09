@@ -9,40 +9,65 @@
 </head>
 <body>
 
+    <!-- Header -->
     <header class="site-header">
         <div class="header-container">
             <a href="index.html" class="logo-link">
                 <img class="site-logo" src="Photos/logo_Nero_AI_Background_Remover_transparent.png" alt="Lord Corner Logo">
             </a>
+            <input type="checkbox" id="nav-toggle-reviews" class="nav-toggle">
             <nav class="primary-nav">
                 <ul class="primary-nav-list">
-                    <li><a href="index.html" class="primary-nav-link">Home</a></li>
-                    <li><a href="products.html" class="primary-nav-link">Products</a></li>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="products.html" class="nav-link">Products</a></li>
                     <li class="collection-menu">
-                        <a href="collection.html" class="primary-nav-link">Collections</a>
+                        <a href="collection.html" class="nav-link">Collections</a>
                         <ul class="collection-dropdown">
                             <li><a href="collection.html#curated-edit" class="dropdown-nav-link">Curated Edit</a></li>
                             <li><a href="collection.html#featured-sets" class="dropdown-nav-link">Featured Sets</a></li>
                             <li><a href="collection.html#seasonal-picks" class="dropdown-nav-link">Seasonal Picks</a></li>
                         </ul>
                     </li>
-                    <li><a href="about.html" class="primary-nav-link">Why Choose Us</a></li>
-                    <li><a href="reviews.html" class="primary-nav-link active">Reviews</a></li>
-                    <li><a href="contact.html" class="primary-nav-link">Contact</a></li>
-                </ul>
-            </nav>
+                    <li><a href="about.html" class="nav-link">Why Choose Us</a></li>
+                    <li><a href="reviews.html" class="nav-link active">Reviews</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul> <!-- /primary-nav-list -->
+            </nav> <!-- /primary-nav -->
             <div class="header-actions">
                 <div class="header-search">
                     <i class="fa-solid fa-magnifying-glass"></i>
                     <input type="search" placeholder="Search reviews...">
-                </div>
+                </div> <!-- /header-search -->
                 <div class="cart-icon">
                     <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-            </div>
-        </div>
-    </header>
+                </div> <!-- /cart-icon -->
+            </div> <!-- /header-actions -->
 
+            <label for="nav-toggle-reviews" class="nav-toggle-button" aria-label="Toggle navigation">
+                <span></span>
+            </label> <!-- /nav-toggle-button -->
+
+            <div class="mobile-nav">
+                <div class="mobile-nav-list">
+                    <a href="index.html" class="mobile-nav-link">Home</a>
+                    <a href="products.html" class="mobile-nav-link">Products</a>
+                    <div class="mobile-nav-group">
+                        <a href="collection.html" class="mobile-nav-link">Collections</a>
+                        <div class="mobile-submenu">
+                            <a href="collection.html#curated-edit">Curated Edit</a>
+                            <a href="collection.html#featured-sets">Featured Sets</a>
+                            <a href="collection.html#seasonal-picks">Seasonal Picks</a>
+                        </div>
+                    </div>
+                    <a href="about.html" class="mobile-nav-link">Why Choose Us</a>
+                    <a href="reviews.html" class="mobile-nav-link active">Reviews</a>
+                    <a href="contact.html" class="mobile-nav-link">Contact</a>
+                </div> <!-- /mobile-nav-list -->
+            </div> <!-- /mobile-nav -->
+        </div> <!-- /header-container -->
+    </header> <!-- /header -->
+
+    <!-- Reviews Hero -->
     <section class="reviews-hero">
         <div class="reviews-hero-inner">
             <div class="reviews-hero-copy">
@@ -63,16 +88,17 @@
                 <div class="reviews-summary-score">
                     <strong>4.9</strong>
                     <span>/ 5</span>
-                </div>
+                </div> <!-- /reviews-summary-score -->
                 <div class="reviews-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
                 <p>
                     Customers consistently mention the premium look, comfortable fit, and how naturally Lord Corner pieces
                     work inside everyday streetwear outfits.
                 </p>
-            </div>
-        </div>
-    </section>
+            </div> <!-- /reviews-summary-card -->
+        </div> <!-- /reviews-hero-inner -->
+    </section> <!-- /reviews-hero -->
 
+    <!-- Reviews Grid -->
     <section class="reviews-section">
         <div class="section-header">
             <span class="section-subtitle">Featured Reviews</span>
@@ -88,10 +114,10 @@
                     <div>
                         <strong>Ahmad K.</strong>
                         <span>Bought the Urban Hoodie</span>
-                    </div>
+                    </div> <!-- /review-author-meta -->
                     <div class="review-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                </div>
-            </article>
+                </div> <!-- /review-author -->
+            </article> <!-- /review-card -->
 
             <article class="review-card">
                 <p>"What stood out most was the styling. The sneakers and oversized pieces actually work together the way they look in the collection."</p>
@@ -99,10 +125,10 @@
                     <div>
                         <strong>Raneem S.</strong>
                         <span>Ordered from the curated collection</span>
-                    </div>
+                    </div> <!-- /review-author-meta -->
                     <div class="review-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                </div>
-            </article>
+                </div> <!-- /review-author -->
+            </article> <!-- /review-card -->
 
             <article class="review-card">
                 <p>"Delivery was quick, the packaging looked sharp, and the fit advice helped me choose the right size the first time."</p>
@@ -110,13 +136,14 @@
                     <div>
                         <strong>Omar T.</strong>
                         <span>First-time customer</span>
-                    </div>
+                    </div> <!-- /review-author-meta -->
                     <div class="review-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                </div>
-            </article>
-        </div>
-    </section>
+                </div> <!-- /review-author -->
+            </article> <!-- /review-card -->
+        </div> <!-- /reviews-grid -->
+    </section> <!-- /reviews-grid -->
 
+    <!-- Reviews Follow Up -->
     <section class="feature-split-section">
         <div class="feature-split-grid">
             <article class="feature-panel">
@@ -139,9 +166,10 @@
                     <a href="collection.html" class="btn btn-secondary">Explore Collections</a>
                 </div>
             </article>
-        </div>
-    </section>
+        </div> <!-- /feature-split-grid -->
+    </section> <!-- /reviews-follow-up -->
 
+    <!-- Footer -->
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-brand">
@@ -166,13 +194,13 @@
                     <a href="https://www.instagram.com/m7md.tomeh/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
                     <a href="https://www.facebook.com/m7md.tomeh/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
                     <a href="https://wa.me/972599396976" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-                </div>
-            </div>
-        </div>
+                </div> <!-- /social-icons -->
+            </div> <!-- /footer-social -->
+        </div> <!-- /footer-container -->
         <div class="footer-bottom">
             <p>&copy; 2026 Lord Corner | Mohammad Tomeh. All Rights Reserved.</p>
-        </div>
-    </footer>
+        </div> <!-- /footer-bottom -->
+    </footer> <!-- /footer -->
 
 </body>
 </html>

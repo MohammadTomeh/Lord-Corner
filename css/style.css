@@ -60,7 +60,7 @@ ul {
 
 /* this is the main desktop header row where i place the logo, nav, and actions */
 .header-container {
-    min-height: 100px;
+    min-height: 80px;
     display: flex;
 }
 

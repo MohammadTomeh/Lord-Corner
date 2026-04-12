@@ -313,8 +313,8 @@ ul {
 
 /* secondary outlined button style */
 .btn-secondary {
-    border-color: rgba(255, 255, 255, 0.75);
-    color: var(--white);
+    border-color: var(--gray);
+    color: var(--gray);
     background: transparent;
 }
 
@@ -435,6 +435,13 @@ ul {
     background: var(--soft-panel);
     border: 1px solid rgba(197, 160, 89, 0.2);
     box-shadow: 0 16px 35px rgba(30, 23, 14, 0.08);
+}
+
+/* prepare light cards for richer hover motion without breaking layout */
+.reviews-section .review-card,
+.home-collections-section .home-collection-card {
+    position: relative;
+    transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition), background-color var(--transition);
 }
 
 /* shared hover lift for cards */
@@ -646,11 +653,41 @@ ul {
     border-radius: 22px;
 }
 
+/* soft light sweep that animates across collection cards on hover */
+.home-collection-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, transparent 20%, rgba(255, 255, 255, 0.22) 50%, transparent 80%);
+    transform: translateX(-130%);
+    transition: transform 0.75s ease;
+    pointer-events: none;
+}
+
+/* stronger hover feedback for collection cards */
+.home-collection-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(197, 160, 89, 0.5);
+    box-shadow: 0 28px 48px rgba(74, 56, 26, 0.18);
+}
+
+/* animate the light sweep while hovering a collection card */
+.home-collection-card:hover::after {
+    transform: translateX(130%);
+}
+
 /* collection preview image sizing */
 .home-collection-card img {
     width: 100%;
     height: 290px;
     object-fit: cover;
+    transition: transform 0.65s ease, filter 0.65s ease;
+}
+
+/* add a slight zoom and contrast boost to the card image on hover */
+.home-collection-card:hover img {
+    transform: scale(1.06);
+    filter: saturate(1.05) contrast(1.02);
 }
 
 /* text area under each collection preview image */
@@ -671,6 +708,14 @@ ul {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
+    transition: transform var(--transition), background-color var(--transition), color var(--transition);
+}
+
+/* tighten the hover feel by nudging the tag upward and brightening it */
+.home-collection-card:hover .home-collection-tag {
+    transform: translateY(-3px);
+    background: rgba(197, 160, 89, 0.18);
+    color: #a56f16;
 }
 
 /* collection preview title spacing */
@@ -1727,6 +1772,15 @@ ul {
 .review-card {
     padding: 28px;
     border-radius: 20px;
+    transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition), background-color var(--transition);
+}
+
+/* testimonial cards lift slightly and feel more interactive on hover */
+.review-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(197, 160, 89, 0.45);
+    box-shadow: 0 24px 42px rgba(74, 56, 26, 0.16);
+    background: #fffaf2;
 }
 
 /* space under each review paragraph */
@@ -1759,6 +1813,13 @@ ul {
 .review-rating {
     color: var(--primary-gold);
     white-space: nowrap;
+    transition: transform var(--transition), letter-spacing var(--transition);
+}
+
+/* a small star shift makes the hover state more noticeable */
+.review-card:hover .review-rating {
+    transform: translateY(-2px);
+    letter-spacing: 1px;
 }
 
 /* wrapper for a full-width highlight card if needed */
@@ -1790,6 +1851,10 @@ ul {
     color: var(--primary-gold);
     margin-right: 10px;
 }
+
+
+
+
 
 /* ==================== Responsive Layout ==================== */
 /* first responsive step for medium screens and tablets */
